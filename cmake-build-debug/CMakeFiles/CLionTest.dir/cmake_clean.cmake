@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CLionTest.exe"
-  "CLionTest.exe.manifest"
-  "CLionTest.lib"
+  "CLionTest"
   "CLionTest.pdb"
-  "CMakeFiles/CLionTest.dir/main.cpp.obj"
+  "CMakeFiles/CLionTest.dir/main.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

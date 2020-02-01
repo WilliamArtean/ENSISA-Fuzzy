@@ -4,141 +4,137 @@
 	<Project>
 		<Option title="CLionTest"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
+				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CLionTest">
-				<Option output="D:/Developpement/C++/CLionTest/cmake-build-debug/CLionTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 CLionTest"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CLionTest/fast">
-				<Option output="D:/Developpement/C++/CLionTest/cmake-build-debug/CLionTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 CLionTest/fast"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
+				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CLionTest">
+				<Option output="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/CLionTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 CLionTest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CLionTest/fast">
+				<Option output="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/CLionTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 CLionTest/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Developpement/C++/CLionTest/Core/BinaryExpression.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/BinaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Core/BinaryExpressionModel.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/BinaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Core/Expression.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/Expression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryExpression.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/UnaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryExpressionModel.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/UnaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Core/ValueModel.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/ValueModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AggMax.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AggMax.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AggPlus.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AggPlus.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AndMin.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AndMin.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AndMult.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AndMult.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/IsTriangle.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/IsTriangle.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/NotMinus1.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/NotMinus1.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/Operator.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/Operator.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/OrMax.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/OrMax.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/OrPlus.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/OrPlus.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/ThenMin.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/ThenMin.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/ThenMult.h">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/ThenMult.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/main.cpp">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/main.cpp">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="D:/Developpement/C++/CLionTest/CMakeLists.txt">
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
