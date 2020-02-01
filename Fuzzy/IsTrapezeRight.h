@@ -15,7 +15,7 @@ namespace fuzzy
         T min,mid;
     public:
         IsTrapezeRight(T _min,  T _mid);
-        virtual T evaluate(core::Expression<T>* o);
+        virtual T evaluate(core::Expression<T>* o) const;
     };
 
     template <class T>
@@ -23,7 +23,7 @@ namespace fuzzy
 
 
     template<class T>
-    T IsTrapezeRight<T>::evaluate(core::Expression<T> *o)
+    T IsTrapezeRight<T>::evaluate(core::Expression<T> *o) const
     {
         T absisce = o->evaluate();
         if(absisce < min)

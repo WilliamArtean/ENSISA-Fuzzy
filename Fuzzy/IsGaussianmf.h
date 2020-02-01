@@ -6,7 +6,7 @@
 #define FUZZY_ISGAUSSIANMF_H
 #include <math.h>
 
-#include "Operators.h"
+#include "Operator.h"
 
 namespace fuzzy{
     template <class T>
@@ -16,7 +16,7 @@ namespace fuzzy{
         T sig, c;
     public:
         IsGaussianmf(T _sig, T _c );
-        virtual T evaluate(core::Expression<T>* o);
+        virtual T evaluate(core::Expression<T>* o) const;
 
     };
 
@@ -24,7 +24,7 @@ namespace fuzzy{
     IsGaussianmf<T>::IsGaussianmf(T _sig, T _c): sig(_sig) , c(_c) {}
 
     template<class T>
-    T IsGaussianmf<T>::evaluate(core::Expression<T> *o)
+    T IsGaussianmf<T>::evaluate(core::Expression<T> *o) const
     {
           T absisce = o->evaluate();
          return exp((-(absisce - c)*(absisce - c))/(2 * sig*sig));

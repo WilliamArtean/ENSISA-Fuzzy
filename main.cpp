@@ -14,6 +14,11 @@
 #include "Fuzzy/AggMax.h"
 #include "Fuzzy/AggPlus.h"
 
+
+#include "Fuzzy/IsGbellmf.h"
+#include "Fuzzy/IsGaussianmf.h"
+#include "Fuzzy/IsTriangle.h"
+
 int main() {
     std::cout << std::endl << "Test ValueModel";
     core::ValueModel<int> vmint = core::ValueModel<int>(15);
@@ -112,6 +117,32 @@ int main() {
 
     core::BinaryExpressionModel<int> bem3 = core::BinaryExpressionModel<int>(&thenMult, &vmint, &vmint2);
     assert(bem3.evaluate() == 42*-1085);
+
+
+
+    //Omar Testing Part
+    //testing IsTriangle
+    std::cout <<  std::endl <<"isTriangle";
+    core::ValueModel<float> vmForTriangle;
+    vmForTriangle.setValue(3.5);
+    fuzzy::IsTriangle<float> isTriangle(1,4,5);
+    std::cout << std::endl<<isTriangle.evaluate(&vmForTriangle);
+
+
+
+    //testing isGaussian
+    std::cout <<  std::endl <<"is Gaussian";
+    core::ValueModel<float> vmForGaussian;
+    vmForGaussian.setValue(0);
+    fuzzy::IsGaussianmf<float> isGaussianmf(0.5, 0);
+    std::cout << std::endl<<isGaussianmf.evaluate(&vmForGaussian);
+
+    //testing isGbellmf
+    std::cout <<  std::endl <<"is GBell";
+    core::ValueModel<float> vmForGbell;
+    vmForGbell.setValue(100);
+    fuzzy::IsGbellmf<float> isGbellmf(20,4,100);
+    std::cout << std::endl<<isGbellmf.evaluate(&vmForGbell);
 
     return 0;
 }

@@ -5,7 +5,7 @@
 #ifndef FUZZY_ISTRAPEZELEFT_H
 #define FUZZY_ISTRAPEZELEFT_H
 
-#include "Operators.h"
+#include "Operator.h"
 namespace fuzzy
 {
     template <class T>
@@ -15,7 +15,7 @@ namespace fuzzy
         T mid,max;
     public:
         IsTrapezeLeft(T _mid,  T _max);
-        virtual T evaluate(core::Expression<T>* o);
+        virtual T evaluate(core::Expression<T>* o) const;
     };
 
 
@@ -23,7 +23,7 @@ namespace fuzzy
      IsTrapezeLeft<T>::IsTrapezeLeft(T _mid, T _max) : mid(_mid), max(_max){}
 
      template <class T>
-     T IsTrapezeLeft<T>::evaluate(core::Expression<T> *o)
+     T IsTrapezeLeft<T>::evaluate(core::Expression<T> *o) const
      {
          T absisce = o->evaluate();
          if(absisce< mid)

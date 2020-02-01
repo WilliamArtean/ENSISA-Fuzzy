@@ -4,7 +4,7 @@
 
 #ifndef FUZZY_ISTRAPEZE_H
 #define FUZZY_ISTRAPEZE_H
-#include "Operators.h"
+#include "Operator.h"
 
 namespace  fuzzy
 {
@@ -15,7 +15,7 @@ namespace  fuzzy
         T min,mid1,mid2,max;
     public:
         IsTrapeze(T _min, T _mid1, T _mid2, T _max);
-        virtual T evaluate(core::Expression<T>* o);
+        virtual T evaluate(core::Expression<T>* o) const;
     };
 
     template<class T>
@@ -24,7 +24,7 @@ namespace  fuzzy
 
     }
     template<class T>
-    T IsTrapeze<T>::evaluate(core::Expression<T> *o)
+    T IsTrapeze<T>::evaluate(core::Expression<T> *o) const
     {
         T absisce = o->evaluate();
         if(absisce< min)
