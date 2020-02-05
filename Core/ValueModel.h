@@ -24,8 +24,9 @@ namespace core {
     };
 
     template<class T>
-    ValueModel<T>::ValueModel() :
-            value(v) {
+    ValueModel<T>::ValueModel():
+            value(NULL)
+    {
     }
 
     template<class T>

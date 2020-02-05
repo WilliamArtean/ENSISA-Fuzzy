@@ -17,7 +17,12 @@ namespace fuzzy {
 
     template <class T>
     T AggPlus<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const {
-        return l->evaluate() + r->evaluate();
+        T somme = l->evaluate() + r->evaluate();
+        if (somme <= 1) {
+            return somme;
+        } else {
+            return 1
+        }
     }
 
 }

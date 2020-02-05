@@ -43,6 +43,7 @@ namespace core {
         if (leftOperand != NULL && rightOperand != NULL) {
             return evaluate(leftOperand, rightOperand);
         }
+        return NULL;
     }
 
     template<class T>
@@ -50,6 +51,7 @@ namespace core {
         if (expressionOperator != NULL) {
             return expressionOperator->evaluate(l, r);
         }
+        return NULL;
     }
 
 }

@@ -40,6 +40,7 @@ namespace core {
         if (expressionOperand != NULL) {
             return evaluate(expressionOperand);
         }
+        return NULL;
     }
 
     template<class T>
@@ -47,6 +48,7 @@ namespace core {
         if (expressionOperator != NULL) {
             return expressionOperator->evaluate(o);
         }
+        return NULL;
     }
 
 }

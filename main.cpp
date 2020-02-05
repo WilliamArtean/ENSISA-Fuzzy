@@ -14,6 +14,79 @@
 #include "Fuzzy/AggMax.h"
 #include "Fuzzy/AggPlus.h"
 
+
+void testAndMin();
+
+void testBinaryExpressionModel();
+
+void testValueModel() {
+    std::cout << std::endl << "default ctor test ValueModel int";
+    core::ValueModel<int> vm;
+    std::cout << std::endl << "defaultValue int : " << vm.evaluate();
+    vm.setValue(5);
+    assert(vm.evaluate() == 5);
+    std::cout << std::endl << "valued ctor test ValueModel int";
+    core::ValueModel<int> vm2(10);
+    assert(vm2.evaluate() == 10);
+}
+
+void testNotMinus1() {
+    std::cout << std::endl << "test NotMinus1";
+    fuzzy::NotMinus1<double> nm1;
+    core::ValueModel<double> vm(0.2);
+    assert(nm1.evaluate(&vm) == 0.8);
+}
+
+void testUnaryExpressionModel() {
+    std::cout << std::endl << "default ctor test UnaryExpressionModel double";
+    core::UnaryExpressionModel<double> uem;
+    core::ValueModel<double> vm(0.2);
+    assert(uem.evaluate() == 0);
+    assert(uem.evaluate(&vm) == 0);
+    std::cout << std::endl << "valued ctor test UnaryExpressionModel double";
+    fuzzy::NotMinus1<double> nm1;
+    core::UnaryExpressionModel<double> uem2(&nm1,&vm);
+    assert(uem2.evaluate() == 0.8);
+    assert(uem2.evaluate(&vm) == 0.8);
+}
+
+void testAndMin() {
+    std::cout << std::endl << "test AndMin";
+    core::ValueModel<double> vm(0.2);
+    core::ValueModel<double> vm2(0.5);
+    fuzzy::AndMin<double> am;
+    assert(am.evaluate(&vm, &vm2) == vm.evaluate());
+}
+
+
+void testBinaryExpressionModel() {
+    std::cout << std::endl << "default ctor test BinaryExpressionModel double";
+    core::BinaryExpressionModel<double> uem;
+    core::ValueModel<double> vm(0.2);
+    core::ValueModel<double> vm2(0.5);
+    assert(uem.evaluate() == 0);
+    assert(uem.evaluate(&vm, &vm2) == 0);
+    std::cout << std::endl << "valued ctor test BinaryExpressionModel double";
+    fuzzy::AndMin<double> am;
+    core::BinaryExpressionModel<double> uem2(&am, &vm, &vm2);
+    assert(uem2.evaluate() == 0.2);
+    assert(uem2.evaluate(&vm, &vm2) == 0.2);
+}
+
+void testExpressions() {
+    testValueModel();
+    testUnaryExpressionModel();
+    testBinaryExpressionModel();
+
+}
+
+
+void testOperator() {
+    testNotMinus1();
+    testAndMin();
+}
+
+
 int main() {
     std::cout << std::endl << "Test ValueModel";
     core::ValueModel<int> vmint = core::ValueModel<int>(15);
@@ -112,6 +185,10 @@ int main() {
 
     core::BinaryExpressionModel<int> bem3 = core::BinaryExpressionModel<int>(&thenMult, &vmint, &vmint2);
     assert(bem3.evaluate() == 42*-1085);
+
+
+    testExpressions();
+    testOperator();
 
     return 0;
 }

@@ -11,7 +11,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78278fac-88ee-44c1-be05-3ee4de2b0007" name="Default Changelist" comment="" />
+    <list default="true" id="78278fac-88ee-44c1-be05-3ee4de2b0007" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fuzzy/FuzzyFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/BinaryExpressionModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/BinaryExpressionModel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/UnaryExpressionModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/UnaryExpressionModel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/ValueModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ValueModel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fuzzy/AggPlus.h" beforeDir="false" afterPath="$PROJECT_DIR$/Fuzzy/AggPlus.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fuzzy/OrPlus.h" beforeDir="false" afterPath="$PROJECT_DIR$/Fuzzy/OrPlus.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CLionTest.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CLionTest.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CLionTest.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CLionTest.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CLionTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CLionTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CLionTest.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CLionTest.dir/vc140.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +36,11 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WqSxNrcwTv97dtswWievktyTJX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,6 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="language.cpp.clangd" />
   </component>
@@ -55,6 +75,8 @@
       <workItem from="1580054749781" duration="4042000" />
       <workItem from="1580201509203" duration="6567000" />
       <workItem from="1580288548414" duration="6822000" />
+      <workItem from="1580478889593" duration="497000" />
+      <workItem from="1580914364427" duration="1595000" />
     </task>
     <servers />
   </component>
@@ -66,27 +88,27 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="436" y="100" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1580207247918" />
-    <state width="1481" height="129" key="GridCell.Tab.0.bottom" timestamp="1580295485125">
+    <state width="1481" height="112" key="GridCell.Tab.0.bottom" timestamp="1580915657587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="129" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580295485125" />
-    <state width="1481" height="129" key="GridCell.Tab.0.center" timestamp="1580295485125">
+    <state width="1481" height="112" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580915657587" />
+    <state width="1481" height="112" key="GridCell.Tab.0.center" timestamp="1580915657587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="129" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580295485125" />
-    <state width="1481" height="129" key="GridCell.Tab.0.left" timestamp="1580295485125">
+    <state width="1481" height="112" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580915657587" />
+    <state width="1481" height="112" key="GridCell.Tab.0.left" timestamp="1580915657587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="129" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580295485125" />
-    <state width="1481" height="129" key="GridCell.Tab.0.right" timestamp="1580295485125">
+    <state width="1481" height="112" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580915657587" />
+    <state width="1481" height="112" key="GridCell.Tab.0.right" timestamp="1580915657587">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1481" height="129" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580295485125" />
-    <state x="451" y="183" key="com.intellij.ide.util.TipDialog" timestamp="1580288577880">
+    <state width="1481" height="112" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580915657587" />
+    <state x="451" y="183" key="com.intellij.ide.util.TipDialog" timestamp="1580914388094">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="451" y="183" key="com.intellij.ide.util.TipDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1580054752602" />
-    <state x="451" y="183" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1580288577880" />
+    <state x="451" y="183" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1580914388094" />
     <state x="341" y="183" key="run.anything.popup" timestamp="1580292141195">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

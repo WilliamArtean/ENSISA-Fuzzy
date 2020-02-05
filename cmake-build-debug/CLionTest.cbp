@@ -114,6 +114,9 @@
 		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AndMult.h">
 			<Option target="CLionTest"/>
 		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/FuzzyFactory.h">
+			<Option target="CLionTest"/>
+		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/IsTriangle.h">
 			<Option target="CLionTest"/>
 		</Unit>
