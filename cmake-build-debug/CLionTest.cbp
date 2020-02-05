@@ -86,13 +86,22 @@
 		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/BinaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/BinaryShadowExpression.h">
+			<Option target="CLionTest"/>
+		</Unit>
 		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/Expression.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/ExpressionFactory.h">
 			<Option target="CLionTest"/>
 		</Unit>
 		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/UnaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
 		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/UnaryExpressionModel.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/UnaryShadowExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
 		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/ValueModel.h">
@@ -110,7 +119,16 @@
 		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AndMult.h">
 			<Option target="CLionTest"/>
 		</Unit>
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/CogDefuzz.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/FuzzyFactory.h">
+			<Option target="CLionTest"/>
+		</Unit>
 		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/IsTriangle.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/MamdaniDefuzz.h">
 			<Option target="CLionTest"/>
 		</Unit>
 		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/NotMinus1.h">
