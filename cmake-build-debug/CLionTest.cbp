@@ -90,6 +90,9 @@
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/BinaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/BinaryShadowExpression.h">
+			<Option target="CLionTest"/>
+		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/Expression.h">
 			<Option target="CLionTest"/>
 		</Unit>
@@ -100,6 +103,9 @@
 			<Option target="CLionTest"/>
 		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryExpressionModel.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryShadowExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/ValueModel.h">
