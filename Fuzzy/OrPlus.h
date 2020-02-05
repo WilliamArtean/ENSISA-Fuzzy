@@ -21,7 +21,7 @@ namespace fuzzy {
         if (somme <= 1) {
             return somme;
         } else {
-            return 1
+            return 1;
         }
     }
 

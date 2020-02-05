@@ -93,6 +93,9 @@
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/Expression.h">
 			<Option target="CLionTest"/>
 		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/ExpressionFactory.h">
+			<Option target="CLionTest"/>
+		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>

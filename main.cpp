@@ -127,7 +127,7 @@ int main() {
     assert(orPlus.evaluate(&vmint, &vmint2) == 42-1085);
 
     fuzzy::OrPlus<double> orPlusDouble = fuzzy::OrPlus<double>();
-    assert(orPlusDouble.evaluate(&vmdouble, &vmdouble2) == 0.1+165.44);
+    assert(orPlusDouble.evaluate(&vmdouble, &vmdouble2) == 1);
 
 
     std::cout << std::endl << "Test AndMin";
@@ -175,7 +175,7 @@ int main() {
     assert(aggPlus.evaluate(&vmint, &vmint2) == 42-1085);
 
     fuzzy::AggPlus<double> aggPlusDouble = fuzzy::AggPlus<double>();
-    assert(aggPlusDouble.evaluate(&vmdouble, &vmdouble2) == 0.1+165.44);
+    assert(aggPlusDouble.evaluate(&vmdouble, &vmdouble2) == 1);
 
 
     std::cout << std::endl << "Test BinaryExpressionModel";
