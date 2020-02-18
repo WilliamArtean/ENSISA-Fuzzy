@@ -5,6 +5,8 @@ CMakeFiles/CLionTest.dir/main.cpp.obj
  D:/Developpement/C++/CLionTest/Core/BinaryExpression.h
  D:/Developpement/C++/CLionTest/Core/BinaryExpressionModel.h
  D:/Developpement/C++/CLionTest/Core/Expression.h
+ D:/Developpement/C++/CLionTest/Core/NaryExpression.h
+ D:/Developpement/C++/CLionTest/Core/NaryExpressionModel.h
  D:/Developpement/C++/CLionTest/Core/UnaryExpression.h
  D:/Developpement/C++/CLionTest/Core/UnaryExpressionModel.h
  D:/Developpement/C++/CLionTest/Core/ValueModel.h

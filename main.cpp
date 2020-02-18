@@ -4,6 +4,7 @@
 #include "Core/ValueModel.h"
 #include "Core/UnaryExpressionModel.h"
 #include "Core/BinaryExpressionModel.h"
+#include "Core/NaryExpressionModel.h"
 #include "Fuzzy/NotMinus1.h"
 #include "Fuzzy/OrMax.h"
 #include "Fuzzy/AndMin.h"
@@ -73,17 +74,26 @@ void testBinaryExpressionModel() {
     assert(uem2.evaluate(&vm, &vm2) == 0.2);
 }
 
+void testNaryExpressionModel() {
+    std::cout << std::endl << "default ctor test NaryExpressionModel double";
+    core::NaryExpressionModel<double> nem;
+}
+
 void testExpressions() {
     testValueModel();
     testUnaryExpressionModel();
     testBinaryExpressionModel();
-
+    testNaryExpressionModel();
 }
 
 
 void testOperator() {
     testNotMinus1();
     testAndMin();
+}
+
+void testNaryExpression() {
+
 }
 
 

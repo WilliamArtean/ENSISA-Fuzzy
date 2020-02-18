@@ -16,6 +16,16 @@ D:/Developpement/C++/CLionTest/Core/BinaryExpression.h
 
 D:/Developpement/C++/CLionTest/Core/Expression.h
 
+D:/Developpement/C++/CLionTest/Core/NaryExpression.h
+vector
+-
+Expression.h
+D:/Developpement/C++/CLionTest/Core/Expression.h
+
+D:/Developpement/C++/CLionTest/Core/NaryExpressionModel.h
+NaryExpression.h
+D:/Developpement/C++/CLionTest/Core/NaryExpression.h
+
 D:/Developpement/C++/CLionTest/Core/UnaryExpression.h
 Expression.h
 D:/Developpement/C++/CLionTest/Core/Expression.h
@@ -81,6 +91,8 @@ Core/UnaryExpressionModel.h
 D:/Developpement/C++/CLionTest/Core/UnaryExpressionModel.h
 Core/BinaryExpressionModel.h
 D:/Developpement/C++/CLionTest/Core/BinaryExpressionModel.h
+Core/NaryExpressionModel.h
+D:/Developpement/C++/CLionTest/Core/NaryExpressionModel.h
 Fuzzy/NotMinus1.h
 D:/Developpement/C++/CLionTest/Fuzzy/NotMinus1.h
 Fuzzy/OrMax.h

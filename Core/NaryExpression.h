@@ -4,6 +4,7 @@
 
 #ifndef CLIONTEST_NARYEXPRESSION_H
 #define CLIONTEST_NARYEXPRESSION_H
+
 #include <vector>
 
 #include "Expression.h"
