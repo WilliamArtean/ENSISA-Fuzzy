@@ -12,18 +12,24 @@ namespace core {
     template <class T>
     class UnaryShadowExpression : public UnaryExpression<T> {
     public:
-        T evaluate(Expression<T> o);
+        T evaluate(Expression<T> *o);
+        void changeTarget(UnaryExpression<T> *t);
 
     private:
         UnaryExpression<T> *target;
     };
 
     template <class T>
-    T UnaryShadowExpression<T>::evaluate(core::Expression<T> o) {
+    T UnaryShadowExpression<T>::evaluate(core::Expression<T> *o) {
         if (target != NULL) {
             return target->evaluate(o);
         }
         return NULL;
+    }
+
+    template <class T>
+    void UnaryShadowExpression<T>::changeTarget(core::UnaryExpression<T> *t) {
+        target = t;
     }
 
 }
