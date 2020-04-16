@@ -1,0 +1,8 @@
+//
+// Created by coscoy on 05/02/2020.
+//
+
+#ifndef CLIONTEST_MAMDANIDEFUZZ_H
+#define CLIONTEST_MAMDANIDEFUZZ_H
+
+#endif //CLIONTEST_MAMDANIDEFUZZ_H
