@@ -1,59 +1,46 @@
-//
-// Created by pierr on 26/01/2020.
-//
-
-#ifndef CLIONTEST_BINARYEXPRESSIONMODEL_H
-#define CLIONTEST_BINARYEXPRESSIONMODEL_H
-
-#include "BinaryExpression.h"
-
-namespace core {
-
-    template<class T>
-    class BinaryExpressionModel : public BinaryExpression<T>, Expression<T> {     //Héritage multiple ??
-    private:
-        BinaryExpression<T>* expressionOperator;
-        Expression<T>* leftOperand;
-        Expression<T>* rightOperand;
-
-    public:
-        BinaryExpressionModel();
-        BinaryExpressionModel(BinaryExpression<T> *operat, Expression<T> *left, Expression<T> *right);     //Operator THEN left operand, then right operand
-        virtual ~BinaryExpressionModel() {};
+#pragma once
+#ifndef BINARY_EXPRESSION_MODEL_H
+#define BINARY_EXPRESSION_MODEL_H
+#include "expression.h"
+#include "binaryExpression.h"
 
 
-        T evaluate() const;
-        T evaluate(Expression<T>* l, Expression<T>* r) const;
-    };
+namespace core
+{
+	template<class T>
+	class BinaryExpressionModel : public BinaryExpression<T>
+	{
+	public:
+		BinaryExpressionModel() {};
+		BinaryExpressionModel(BinaryExpression<T>& ope, Expression<T>& l, Expression<T>& r) : oper(ope), left(l), right(r) {}
+		T evaluate() const;
+		T evaluate(Expression<T>&,Expression<T>&) const;
+	private:
+		const BinaryExpression<T> oper;
+		const Expression<T> left;
+		const Expression<T> right;
+	};
 
-    template<class T>
-    BinaryExpressionModel<T>::BinaryExpressionModel() :
-            expressionOperator(NULL), leftOperand(NULL), rightOperand(NULL)
-    {
-    }
+	template<class T>
+	T BinaryExpressionModel<T>::evaluate() const
+	{
+		if (left != nullptr && right != nullptr)
+		{
+			return evaluate(left,right);
+		}
+		return nullptr;
+	}
 
-    template<class T>
-    BinaryExpressionModel<T>::BinaryExpressionModel(BinaryExpression<T> *operat, Expression<T> *left, Expression<T> *right) :
-            expressionOperator(operat), leftOperand(left), rightOperand(right) {
-    }
-
-
-    template<class T>
-    T BinaryExpressionModel<T>::evaluate() const {
-        if (leftOperand != NULL && rightOperand != NULL) {
-            return evaluate(leftOperand, rightOperand);
-        }
-        return NULL;
-    }
-
-    template<class T>
-    T BinaryExpressionModel<T>::evaluate(Expression<T>* l, Expression<T>* r) const {
-        if (expressionOperator != NULL) {
-            return expressionOperator->evaluate(l, r);
-        }
-        return NULL;
-    }
+	template<class T>
+	T BinaryExpressionModel<T>::evaluate(Expression<T>& l,Expression<T>& r) const
+	{
+		if (oper != nullptr)
+		{
+			return oper.evaluate(l,r);
+		}
+		return nullptr;
+	}
 
 }
 
-#endif //CLIONTEST_BINARYEXPRESSIONMODEL_H
+#endif

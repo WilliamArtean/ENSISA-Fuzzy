@@ -1,18 +1,15 @@
-//
-// Created by pierr on 26/01/2020.
-//
+#pragma once
+#ifndef EXPRESSION_H
+#define EXPRESSION_H
 
-#ifndef CLIONTEST_EXPRESSION_H
-#define CLIONTEST_EXPRESSION_H
-
-namespace core {
-
-    template<class T>
-    class Expression {
-    public:
-        virtual T evaluate() const = 0;
-    };
-
+namespace core
+{
+	template <class T>
+	class Expression
+	{
+	public:
+		virtual T evaluate() const = 0;
+	};
 }
 
-#endif //CLIONTEST_EXPRESSION_H
+#endif

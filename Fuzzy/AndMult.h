@@ -1,25 +1,29 @@
-//
-// Created by pierr on 29/01/2020.
-//
+#pragma once
+#ifndef ANDMULT_H
+#define ANDMULT_H
 
-#ifndef CLIONTEST_ANDMULT_H
-#define CLIONTEST_ANDMULT_H
-
-#include "Operator.h"
+#include "binaryExpression.h"
+#include "expression.h"
+#include "operatorsBi.h"
+using namespace core;
 
 namespace fuzzy {
+	template <class T>
+	class AndMult : public And<T>
+	{
+	public:
+		T evaluate(Expression<T>&, Expression<T>&) const;
+	};
 
-    template <class T>
-    class AndMult : public And<T> {
-    public:
-        T evaluate(core::Expression<T>* l, core::Expression<T>* r) const;
-    };
 
-    template <class T>
-    T AndMult<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const {
-        return l->evaluate() * r->evaluate();
-    }
+	template<class T>
+	T AndMult<T>::evaluate(Expression<T> & l, Expression<T> & r) const
+	{
+		T left = l.evaluate();
+		T right = r.evaluate();
+		return (left * right);
+	}
 
 }
 
-#endif //CLIONTEST_ANDMULT_H
+#endif

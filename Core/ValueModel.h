@@ -1,50 +1,32 @@
-//
-// Created by pierr on 26/01/2020.
-//
+#pragma once
+#ifndef VALUE_MODEL_H
+#define VALUE_MODEL_H
 
-#ifndef CLIONTEST_VALUEMODEL_H
-#define CLIONTEST_VALUEMODEL_H
+namespace core
+{
+	template <class T>
+	class ValueModel
+	{
+	public:
+		ValueModel() {};
+		ValueModel(T& v) :value(v) {};
+		T evaluate() const;
+		void setValue(T&);
+	private:
+		T value;
+	};
 
-#include "Expression.h"
+	template<class T>
+	T ValueModel<T>::evaluate() const
+	{
+		return value;
+	}
 
-namespace core {
-
-    template<class T>
-    class ValueModel : public Expression<T> {
-    private:
-        T value;
-
-    public:
-        ValueModel();
-        ValueModel(const T &);
-        virtual ~ValueModel() {};
-
-        T evaluate() const;
-        void setValue(const T&);
-    };
-
-    template<class T>
-    ValueModel<T>::ValueModel():
-            value(NULL)
-    {
-    }
-
-    template<class T>
-    ValueModel<T>::ValueModel(const T& v) :
-            value(v) {
-    }
-
-
-    template<class T>
-    T ValueModel<T>::evaluate() const {
-        return value;
-    }
-
-    template<class T>
-    void ValueModel<T>::setValue(const T& v) {
-        value = v;
-    }
-
+	template <class T>
+	void ValueModel<T>::setValue(T& v)
+	{
+		value = v;
+	}
 }
 
-#endif //CLIONTEST_VALUEMODEL_H
+#endif

@@ -1,25 +1,30 @@
-//
-// Created by pierr on 29/01/2020.
-//
+#pragma once
+#ifndef ANDMIN_H
+#define ANDMIN_H
 
-#ifndef CLIONTEST_ANDMIN_H
-#define CLIONTEST_ANDMIN_H
-
-#include "Operator.h"
+#include "binaryExpression.h"
+#include "expression.h"
+#include "operatorsBi.h"
+using namespace core;
 
 namespace fuzzy {
+	template <class T>
+	class AndMin : public And<T>
+	{
+	public:
+		T evaluate(Expression<T>&, Expression<T>&) const;
+	};
 
-    template <class T>
-    class AndMin : public And<T> {
-    public:
-        T evaluate(core::Expression<T>* l, core::Expression<T>* r) const;
-    };
 
-    template <class T>
-    T AndMin<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const {
-        return (l->evaluate() <= r->evaluate())? l->evaluate() : r->evaluate();
-    }
+	template<class T>
+	T AndMin<T>::evaluate(Expression<T> & l, Expression<T> & r) const
+	{
+		T left = l.evaluate();
+		T right = r.evaluate();
+		return (left <= right) ? left : right;
+	}
 
 }
 
-#endif //CLIONTEST_ANDMIN_H
+#endif
+

@@ -1,20 +1,23 @@
-//
-// Created by pierr on 26/01/2020.
-//
+#pragma once
+#ifndef UNARY_EXPRESSION_H
+#define UNARY_EXPRESSION_H
+#include "expression.h"
 
-#ifndef CLIONTEST_UNARYEXPRESSION_H
-#define CLIONTEST_UNARYEXPRESSION_H
+namespace core
+{
+	template<class T>
+	class UnaryExpression : public Expression<T>
+	{
+	public:
+		T evaluate(Expression<T>&) const = 0;
+	};
 
-#include "Expression.h"
-
-namespace core {
-
-    template<class T>
-    class UnaryExpression {
-    public:
-        virtual T evaluate(Expression<T>* o) const = 0;
-    };
-
+	template<class T>
+	T BinaryExpression<T>::evaluate() const
+	{
+		return evaluate(left, right);
+	}
 }
 
-#endif //CLIONTEST_UNARYEXPRESSION_H
+
+#endif

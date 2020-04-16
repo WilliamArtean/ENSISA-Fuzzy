@@ -1,20 +1,17 @@
-//
-// Created by pierr on 26/01/2020.
-//
-
-#ifndef CLIONTEST_BINARYEXPRESSION_H
-#define CLIONTEST_BINARYEXPRESSION_H
-
+#pragma once
 #include "Expression.h"
+#ifndef BINARY_EXPRESSION_H
+#define BINARY_EXPRESSION_H
 
-namespace core {
-
-    template<class T>
-    class BinaryExpression {
-    public:
-        virtual T evaluate(Expression<T>* l, Expression<T>* r) const = 0;
-    };
+namespace core
+{
+	template <class T>
+	class BinaryExpression : public Expression<T>
+	{
+	public:
+		T evaluate(Expression<T>&, Expression<T>&) const =0;
+	};
 
 }
 
-#endif //CLIONTEST_BINARYEXPRESSION_H
+#endif

@@ -1,25 +1,29 @@
-//
-// Created by pierr on 28/01/2020.
-//
+#pragma once
+#ifndef ORMAX_H
+#define ORMAX_H
 
-#ifndef CLIONTEST_ORMAX_H
-#define CLIONTEST_ORMAX_H
-
-#include "Operator.h"
+#include "binaryExpression.h"
+#include "expression.h"
+#include "operatorsBi.h"
+using namespace core;
 
 namespace fuzzy {
+	template <class T>
+	class OrMax : public Or<T>
+	{
+	public:
+		T evaluate(Expression<T>&, Expression<T>&) const;
+	};
 
-    template <class T>
-    class OrMax : public Or<T> {
-    public:
-        T evaluate(core::Expression<T>* l, core::Expression<T>* r) const;
-    };
 
-    template <class T>
-    T OrMax<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const {
-        return (l->evaluate() >= r->evaluate())? l->evaluate() : r->evaluate();
-    }
+	template<class T>
+	T OrMax<T>::evaluate(Expression<T> & l, Expression<T> & r) const
+	{
+		T left = l.evaluate();
+		T right = r.evaluate();
+		return (left >= right) ? left : right;
+	}
 
 }
 
-#endif //CLIONTEST_ORMAX_H
+#endif

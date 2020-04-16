@@ -1,30 +1,29 @@
-//
-// Created by pierr on 29/01/2020.
-//
+#pragma once
+#ifndef ORPLUS_H
+#define ORPLUS_H
 
-#ifndef CLIONTEST_ORPLUS_H
-#define CLIONTEST_ORPLUS_H
-
-#include "Operator.h"
+#include "binaryExpression.h"
+#include "expression.h"
+#include "operatorsBi.h"
+using namespace core;
 
 namespace fuzzy {
+	template <class T>
+	class OrPlus : public Or<T>
+	{
+	public:
+		T evaluate(Expression<T>&, Expression<T>&) const;
+	};
 
-    template <class T>
-    class OrPlus : public Or<T> {
-    public:
-        T evaluate(core::Expression<T>* l, core::Expression<T>* r) const;
-    };
 
-    template <class T>
-    T OrPlus<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const {
-        T somme = l->evaluate() + r->evaluate();
-        if (somme <= 1) {
-            return somme;
-        } else {
-            return 1;
-        }
-    }
+	template<class T>
+	T OrPlus<T>::evaluate(Expression<T> & l, Expression<T> & r) const
+	{
+		T left = l.evaluate();
+		T right = r.evaluate();
+		return (left + right);
+	}
 
 }
 
-#endif //CLIONTEST_ORPLUS_H
+#endif

@@ -1,25 +1,30 @@
-//
-// Created by pierr on 29/01/2020.
-//
+#pragma once
 
-#ifndef CLIONTEST_THENMULT_H
-#define CLIONTEST_THENMULT_H
+#ifndef THENMULT_H
+#define THENMULT_H
 
-#include "Operator.h"
+#include "binaryExpression.h"
+#include "expression.h"
+#include "operatorsBi.h"
+using namespace core;
 
 namespace fuzzy {
+	template <class T>
+	class ThenMult : public Then<T>
+	{
+	public:
+		T evaluate(Expression<T>&, Expression<T>&) const;
+	};
 
-    template <class T>
-    class ThenMult : public Then<T> {
-    public:
-        T evaluate(core::Expression<T>* l, core::Expression<T>* r) const;
-    };
 
-    template <class T>
-    T ThenMult<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const {
-        return l->evaluate() * r->evaluate();
-    }
+	template<class T>
+	T ThenMult<T>::evaluate(Expression<T> & l, Expression<T> & r) const
+	{
+		T left = l.evaluate();
+		T right = r.evaluate();
+		return (left * right);
+	}
 
 }
 
-#endif //CLIONTEST_THENMULT_H
+#endif
