@@ -12,7 +12,7 @@ namespace fuzzy {
     template <class T>
     class SugenoThen : public Then<T> {
     public:
-        T evaluate(core::Expression<T>* l, core::Expression<T>* r) const;
+        T evaluate(core::Expression<T>* _w, core::Expression<T>* _z) const;
         T getPremiseValue();
 
     private:
@@ -21,9 +21,9 @@ namespace fuzzy {
 
 
     template <class T>
-    T SugenoThen<T>::evaluate(core::Expression<T>* l, core::Expression<T>* r) const {
-        premiseValue = l->evaluate() + r->evaluate();   //??????????????????????????????????????
-        return l->evaluate() * r->evaluate();
+    T SugenoThen<T>::evaluate(core::Expression<T>* _w, core::Expression<T>* _z) const {
+        premiseValue = _w->evaluate();
+        return _w->evaluate() * _z->evaluate();   //Combinaison linéaire ?
     }
 
     template <class T>

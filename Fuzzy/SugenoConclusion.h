@@ -20,7 +20,20 @@ namespace fuzzy {
         std::vector<T> *coeffs;
     };
 
+    template <class T>
+    T SugenoConclusion<T>::evaluate(std::vector<core::Expression<T>> *operands) const {
+        if (coeffs->size() != operands->size() + 1) {
+            return -1;
+        }
 
+        T result;
+        for (int i = 0; i < operands->size(); i++) {
+            result += operands[i]->evaluate() * coeffs[i];
+        }
+
+        result += coeffs[++i];
+        return result;
+    }
 
 }
 

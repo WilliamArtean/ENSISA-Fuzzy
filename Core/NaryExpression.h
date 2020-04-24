@@ -5,9 +5,13 @@
 #ifndef CLIONTEST_NARYEXPRESSION_H
 #define CLIONTEST_NARYEXPRESSION_H
 
+using namespace std;
+
+#include <iostream>
 #include <vector>
 
 #include "Expression.h"
+
 
 namespace core {
 
