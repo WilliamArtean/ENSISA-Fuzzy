@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include <cmath>
 
 #include "Core/ValueModel.h"
 #include "Core/UnaryExpressionModel.h"
@@ -13,6 +14,7 @@
 #include "Fuzzy/ThenMult.h"
 #include "Fuzzy/AggMax.h"
 #include "Fuzzy/AggPlus.h"
+#include "Fuzzy/CogDefuzz.h"
 
 
 void testAndMin();
@@ -61,23 +63,68 @@ void testAndMin() {
 
 void testBinaryExpressionModel() {
     std::cout << std::endl << "default ctor test BinaryExpressionModel double";
-    core::BinaryExpressionModel<double> uem;
+    core::BinaryExpressionModel<double> bem;
     core::ValueModel<double> vm(0.2);
     core::ValueModel<double> vm2(0.5);
-    assert(uem.evaluate() == 0);
-    assert(uem.evaluate(&vm, &vm2) == 0);
+    assert(bem.evaluate() == 0);
+    assert(bem.evaluate(&vm, &vm2) == 0);
     std::cout << std::endl << "valued ctor test BinaryExpressionModel double";
     fuzzy::AndMin<double> am;
-    core::BinaryExpressionModel<double> uem2(&am, &vm, &vm2);
-    assert(uem2.evaluate() == 0.2);
-    assert(uem2.evaluate(&vm, &vm2) == 0.2);
+    core::BinaryExpressionModel<double> bem2(&am, &vm, &vm2);
+    assert(bem2.evaluate() == 0.2);
+    assert(bem2.evaluate(&vm, &vm2) == 0.2);
+}
+
+void testBuildShape() {
+    std::cout << std::endl << "build shape test double" << std::endl;
+    fuzzy::CogDefuzz<double> md;
+    core::ValueModel<double> x(0);
+    core::ValueModel<double> y(0.02);
+    fuzzy::OrPlus<double> op;
+    core::BinaryExpressionModel<double> bem(&op, &x, &y);
+    md.PrintShape(std::cout, md.BuildShape(0,1,0.1, &x, &bem));
+}
+
+void testValuedConstructorCog() {
+    std::cout << std::endl << "cog valued constructor test";
+    core::ValueModel<double> x(0.1);
+    core::ValueModel<double> y(0.5);
+    fuzzy::OrPlus<double> op;
+    core::BinaryExpressionModel<double> bem(&op, &x, &y);
+    fuzzy::CogDefuzz<double> cogD(&x, &bem,5, 7, 8);
+    assert(cogD.getMin() == 5);
+    assert(cogD.getMax() == 7);
+    assert(cogD.getStep() == 8);
+    assert(cogD.getValue()->evaluate() == 0.1);
+    assert(((core::BinaryExpressionModel<double>*)(cogD.getExpression()))->evaluate() == bem.evaluate());
+}
+
+void testMamdaniCogDefuzz() {
+    std::cout << std::endl << "Test Defuzz CogDefuzz/MamdaniDefuzz";
+    core::ValueModel<double> x(0);
+    core::ValueModel<double> y(0.1);
+    fuzzy::OrPlus<double> op;
+    core::BinaryExpressionModel<double> bem(&op, &x, &y);
+    fuzzy::CogDefuzz<double> cogD;
+    fuzzy::CogDefuzz<double>::Shape s = cogD.BuildShape(0,0.5,0.1, &x, &bem);
+    assert(round(100*cogD.Defuzz(s)) == 35);
+}
+
+void testMamdaniCogEvaluate() {
+    std::cout << std::endl << "Test Evaluate CogDefuzz/MamdaniDefuzz";
+    core::ValueModel<double> x(0);
+    core::ValueModel<double> y(0.1);
+    fuzzy::OrPlus<double> op;
+    core::BinaryExpressionModel<double> bem(&op, &x, &y);
+    fuzzy::CogDefuzz<double> cogD(&x, &bem, 0, 0.5, 0.1);
+    assert(round(100*cogD.Evaluate()) == 35);
 }
 
 void testExpressions() {
     testValueModel();
     testUnaryExpressionModel();
     testBinaryExpressionModel();
-
+    testValuedConstructorCog();
 }
 
 
@@ -183,12 +230,14 @@ int main() {
     assert(bem1.evaluate() == 165.44);
     core::BinaryExpressionModel<int> bem2 = core::BinaryExpressionModel<int>();
 
-    core::BinaryExpressionModel<int> bem3 = core::BinaryExpressionModel<int>(&thenMult, &vmint, &vmint2);
+    core::BinaryExpressionModel<int> bem3(&thenMult, &vmint, &vmint2);
     assert(bem3.evaluate() == 42*-1085);
 
 
     testExpressions();
     testOperator();
-
+    testBuildShape();
+    testMamdaniCogDefuzz();
+    testMamdaniCogEvaluate();
     return 0;
 }

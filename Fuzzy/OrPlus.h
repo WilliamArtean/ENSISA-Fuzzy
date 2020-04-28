@@ -18,7 +18,7 @@ namespace fuzzy {
     template <class T>
     T OrPlus<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const {
         T somme = l->evaluate() + r->evaluate();
-        if (somme <= 1) {
+        if (somme <= 1) {  // attention, somme limité à 1
             return somme;
         } else {
             return 1;
