@@ -10,7 +10,7 @@
 namespace core {
 
     template<class T>
-    class BinaryExpressionModel : public BinaryExpression<T>, Expression<T> {     //Héritage multiple ??
+    class BinaryExpressionModel : public Expression<T>, BinaryExpression<T> {     //Héritage multiple ??
     private:
         BinaryExpression<T>* expressionOperator;
         Expression<T>* leftOperand;

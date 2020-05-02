@@ -21,7 +21,7 @@ namespace fuzzy {
 
 
     template <class T>
-    T SugenoThen<T>::evaluate(core::Expression<T>* _w, core::Expression<T>* _z) const {
+    T SugenoThen<T>::evaluate(core::Expression<T>* _w, core::Expression<T>* _z) const {     //l'opérateur _z est un SugenoConclusion
         premiseValue = _w->evaluate();
         return _w->evaluate() * _z->evaluate();   //Combinaison linéaire ?
     }

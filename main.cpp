@@ -14,6 +14,9 @@
 #include "Fuzzy/ThenMult.h"
 #include "Fuzzy/AggMax.h"
 #include "Fuzzy/AggPlus.h"
+#include "Fuzzy/SugenoThen.h"
+#include "Fuzzy/SugenoConclusion.h"
+#include "Fuzzy/SugenoDefuzz.h"
 
 
 void testAndMin();
@@ -77,6 +80,31 @@ void testBinaryExpressionModel() {
 void testNaryExpressionModel() {
     std::cout << std::endl << "default ctor test NaryExpressionModel double";
     core::NaryExpressionModel<double> nem;
+
+    //SugenoConclusion
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+    //
+}
+
+void testSugenoConclusion() {
+    std::cout << std::endl << "default ctor test SugenoConclusion double";
+    fuzzy::SugenoConclusion<double> sugenoConclusionNull;
+
+    std::cout << std::endl << "valued ctor test SugenoConclusion double";
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+
+    core::ValueModel<double> vm(0.3);
+    core::ValueModel<double> vm2(0.5);
+    core::ValueModel<double> vm3(0.8);
+    fuzzy::AndMin<double> am;
+    core::BinaryExpressionModel<double> bem1(&am, &vm, &vm2);
+    core::BinaryExpressionModel<double> bem2(&am, &vm3, &vm);
+    vector<core::Expression<double> *> operands = {&bem1, &bem2};
+
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+
+    assert(sc1.evaluate(operands) == 0.38);
 }
 
 void testExpressions() {
@@ -199,6 +227,14 @@ int main() {
 
     testExpressions();
     testOperator();
+    testValueModel();
+    testNotMinus1();
+    testAndMin();
+    testNaryExpression();
+    testNaryExpressionModel();
+    testUnaryExpressionModel();
+    testBinaryExpressionModel();
+    testSugenoConclusion();
 
     return 0;
 }
