@@ -8,151 +8,169 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option working_dir="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option working_dir="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option working_dir="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CLionTest">
-				<Option output="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/CLionTest" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option output="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/CLionTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 CLionTest"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 CLionTest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CLionTest/fast">
-				<Option output="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/CLionTest" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option output="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/CLionTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 CLionTest/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 CLionTest/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/BinaryExpression.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/BinaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/BinaryExpressionModel.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/BinaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/BinaryShadowExpression.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/BinaryShadowExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/Expression.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/Expression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/ExpressionFactory.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/ExpressionFactory.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/UnaryExpression.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/UnaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/UnaryExpressionModel.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/UnaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/UnaryShadowExpression.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/UnaryShadowExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Core/ValueModel.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Core/ValueModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AggMax.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/Agg.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AggPlus.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/AggMax.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AndMin.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/AggPlus.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/AndMult.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/And.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/CogDefuzz.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/AndMin.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/FuzzyFactory.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/AndMult.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/IsTriangle.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/CogDefuzz.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/MamdaniDefuzz.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/FuzzyFactory.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/NotMinus1.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/Is.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/Operator.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/IsTriangle.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/OrMax.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/MamdaniDefuzz.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/OrPlus.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/Not.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/ThenMin.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/NotMinus1.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/Fuzzy/ThenMult.h">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/Operator.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/main.cpp">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/Or.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/CMakeLists.txt">
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/OrMax.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/OrPlus.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/Then.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/ThenMin.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/Fuzzy/ThenMult.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/main.cpp">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy
+# Install script for directory: /Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/chichaouiomar/CLionProjects/ENSISA-Fuzzy/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/chichaouiomar/Documents/Fuzzy/ENSISA-Fuzzy/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

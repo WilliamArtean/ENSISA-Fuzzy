@@ -21,6 +21,7 @@ namespace core {
         std::vector<Expression<T>*> memory;
     public:
         ExpressionFactory();
+        ExpressionFactory(const ExpressionFactory& o);
         ~ExpressionFactory();
         Expression<T> hold(Expression<T>* expression);
         Expression<T> newUnary(UnaryExpression<T>* ope , Expression<T>* o );
@@ -32,6 +33,9 @@ namespace core {
 
     template<class T>
     ExpressionFactory<T>::~ExpressionFactory() {}
+
+    template<class T>
+    ExpressionFactory<T>::ExpressionFactory(const ExpressionFactory& o):memory(o.memory) {}
 
     template <class T  >
     Expression<T> ExpressionFactory<T>::newUnary(UnaryExpression<T> *ope, Expression<T> *o)
