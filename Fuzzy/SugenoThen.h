@@ -6,6 +6,7 @@
 #define CLIONTEST_SUGENOTHEN_H
 
 #include "Operator.h"
+#include "SugenoConclusion.h"
 
 namespace fuzzy {
 
@@ -13,21 +14,24 @@ namespace fuzzy {
     class SugenoThen : public Then<T> {
     public:
         T evaluate(core::Expression<T>* _w, core::Expression<T>* _z) const;
-        T getPremiseValue();
+        T getPremiseValue() const;
 
     private:
-        T premiseValue;
+        mutable T premiseValue;
     };
 
 
     template <class T>
     T SugenoThen<T>::evaluate(core::Expression<T>* _w, core::Expression<T>* _z) const {     //l'opérateur _z est un SugenoConclusion
         premiseValue = _w->evaluate();
-        return _w->evaluate() * _z->evaluate();   //Combinaison linéaire ?
+        //std::cout << std::endl << "SugenoThen evalue z à : " << _z->evaluate();
+        return _z->evaluate();
     }
 
     template <class T>
-    T SugenoThen<T>::getPremiseValue() {
+    T SugenoThen<T>::getPremiseValue() const {
+        //std::cout << std::endl << "VOUS AVEZ APPELE LA METHODE getPremiseValue() DE LA CLASSE SugenoThen<T>";
+        //std::cout << std::endl << "SugenoThen evalue w à : " << w->evaluate();
         return premiseValue;
     }
 }

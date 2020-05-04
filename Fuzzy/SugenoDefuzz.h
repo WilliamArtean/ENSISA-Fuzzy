@@ -15,17 +15,39 @@ namespace fuzzy {
     class SugenoDefuzz : public core::NaryExpression<T> {
     public:
         T evaluate(std::vector<core::Expression<T>* > operands) const;
+        //T evaluate(std::vector<core::BinaryExpressionModel<T>* > operands) const;
     };
 
+/*
     template <class T>
-    T SugenoDefuzz<T>::evaluate(std::vector<core::Expression<T>* > operands) const {    //collection de SugenoThen ?
-        T numerator, denominator;
+    T SugenoDefuzz<T>::evaluate(std::vector<core::Expression<T>* > operands) const {
+        T numerator = 0;
+        T denominator = 0;
 
-        for (int i; i < operands.size(); i++) {
-            numerator += operands[i]->evaluate() * operands[i]->getPremiseValue();
-            denominator += operands[i]->getPremiseValue();
+        for (int i= 0; i < operands.size(); i++) {
+            numerator += operands[i]->evaluate();
         }
 
+        return numerator;
+    }
+*/
+    template <class T>
+    T SugenoDefuzz<T>::evaluate(std::vector<core::Expression<T>* > operands) const {
+        T numerator = 0;
+        T denominator = 0;
+
+        for (int i= 0; i < operands.size(); i++) {
+            T z = operands[i]->evaluate();
+            T w = operands[i]->getPremiseValue();
+            numerator += w * z;
+            denominator += w;
+        }
+
+        if (denominator == 0) {
+            std::cout << std::endl << "DIVISION PAR ZERO";
+        }
+        //std::cout << std::endl << "numerator =" << numerator;
+        //std::cout << std::endl << "denominator =" << denominator;
         return numerator / denominator;
     }
 
