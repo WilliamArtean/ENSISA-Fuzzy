@@ -1,0 +1,8 @@
+//
+// Created by coscoy on 02/05/2020.
+//
+
+#ifndef CLIONTEST_FUZZY_ADAPTOR_H
+#define CLIONTEST_FUZZY_ADAPTOR_H
+
+#endif //CLIONTEST_FUZZY_ADAPTOR_H
