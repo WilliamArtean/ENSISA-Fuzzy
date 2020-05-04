@@ -66,4 +66,5 @@ private:
         return expression;
     }
 }
-#endif //CLIONTEST_COGDEFUZZ_H
+
+#endif

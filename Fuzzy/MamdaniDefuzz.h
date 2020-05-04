@@ -97,5 +97,4 @@ namespace fuzzy {
 
 }
 
-
-#endif //CLIONTEST_MAMDANIDEFUZZ_H
+#endif
