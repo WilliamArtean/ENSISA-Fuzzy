@@ -16,7 +16,7 @@ main (int argc, char *argv[])
         driver.trace_parsing = true;
     if (false)  //show scanning
         driver.trace_scanning = true;
-    if (!driver.parse ("/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/instructions.txt")) {
+    if (!driver.parse ("../instructions.txt")) {
         adaptor.adapt(driver.result);
     }
     res = 1;
