@@ -18,6 +18,7 @@
 #include "CogDefuzz.h"
 
 namespace fuzzy{
+    /*
     template <class T>
     class FuzzyFactory :public core::ExpressionFactory<T>
     {
@@ -126,7 +127,7 @@ namespace fuzzy{
         _ThenShadow->setTarget(opThen);
     }
 
-
+*/
 
     }
 #endif //CLIONTEST_FUZZYFACTORY_H

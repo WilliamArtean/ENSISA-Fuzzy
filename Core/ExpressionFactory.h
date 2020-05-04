@@ -14,6 +14,7 @@
 #include "BinaryExpressionModel.h"
 
 namespace core {
+    /*
     template <class T>
     class ExpressionFactory
     {
@@ -55,6 +56,7 @@ namespace core {
         this->memory.push_back(expression);
         return expression;
     }
+    */
 }
 
 #endif //CLIONTEST_EXPRESSIONFACTORY_H

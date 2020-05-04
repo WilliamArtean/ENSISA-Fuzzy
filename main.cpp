@@ -15,6 +15,9 @@
 #include "Fuzzy/AggMax.h"
 #include "Fuzzy/AggPlus.h"
 #include "Fuzzy/CogDefuzz.h"
+#include "Fuzzy/IsGbellmf.h"
+#include "Fuzzy/IsGaussianmf.h"
+#include "Fuzzy/IsTriangle.h"
 
 
 void testAndMin();
@@ -134,12 +137,6 @@ void testOperator() {
 }
 
 /*
-=======
-#include "Fuzzy/IsGbellmf.h"
-#include "Fuzzy/IsGaussianmf.h"
-#include "Fuzzy/IsTriangle.h"
-
->>>>>>> 4a3f25be46d47ecaa78286f44a2a754cdd09a3b0
 int main() {
     std::cout << std::endl << "Test ValueModel";
     core::ValueModel<int> vmint = core::ValueModel<int>(15);

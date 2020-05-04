@@ -7,6 +7,7 @@
 
 # include <string>
 # include <map>
+#include <FuzzyFactory.h>
 #include "../Fuzzy/AndMin.h"
 #include "../Core/Expression.h"
 #include "../Fuzzy/AndMult.h"
@@ -88,6 +89,7 @@ std::map<std::string, core::Expression<T>*> fuzzy_adaptor<T>::adapt(std::vector<
         fuzzy::AggMax<T> oper = fuzzy::AggMax<T>();
         variables.insert( std::pair<std::string, core::Expression<T>*>("agg",((core::Expression<T>*)&oper)));
     }
+    //fuzzy::FuzzyFactory<T> f(variables["and"],variables["or"],variables["not"],variables["then"],variables["agg"]);
     ++it;
     fuzzy::NotMinus1<T> oper = fuzzy::NotMinus1<T>();
     variables.insert( std::pair<std::string, core::Expression<T>*>("not",((core::Expression<T>*)&oper)));
