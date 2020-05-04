@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <ostream>
+#include "../Core/BinaryExpressionModel.h"
 #include "../Core/BinaryExpression.h"
 #include "../Core/ValueModel.h"
 

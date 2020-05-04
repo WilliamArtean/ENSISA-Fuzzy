@@ -1,3 +1,22 @@
-three := 3
-seven := one + two * three
-seven * seven
+fuzzy System {
+	operators { 
+		and = AndMin
+		or = OrMax
+		then = ThenMin
+		defuzz = CogDefuzz
+		agg = Aggplus
+	}
+	membership {
+		poor = triangle 0.5 10 15
+		cheap = triangle 0.5 10 15
+		good = triangle 0.5 10 15
+	}
+	values {
+		food = 5
+		service
+		tip
+	}
+	if service is poor or food is poor then tip is cheap
+    if service is good or food is cheap then tip is good
+    if food is bonne and chien is prommene then tip is good
+}

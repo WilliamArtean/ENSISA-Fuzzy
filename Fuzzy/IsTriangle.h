@@ -23,7 +23,7 @@ namespace fuzzy {
         if (o->evaluate() <= *min || o->evaluate() >= *max) {
             return 0;
         } else if (o->evaluate() <= mid) {
-            return (()/())
+            return 0;
         }
     }
 

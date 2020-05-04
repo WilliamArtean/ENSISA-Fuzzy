@@ -133,7 +133,7 @@ void testOperator() {
     testAndMin();
 }
 
-
+/*
 int main() {
     std::cout << std::endl << "Test ValueModel";
     core::ValueModel<int> vmint = core::ValueModel<int>(15);
@@ -241,3 +241,4 @@ int main() {
     testMamdaniCogEvaluate();
     return 0;
 }
+ */
