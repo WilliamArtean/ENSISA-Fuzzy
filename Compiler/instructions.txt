@@ -16,7 +16,7 @@ fuzzy System {
 		service
 		tip
 	}
-	if service is poor or food is poor then tip is cheap
+	if service is not poor or food is poor then tip is cheap
     if service is good or food is cheap then tip is good
     if food is bonne and chien is prommene then tip is good
 }

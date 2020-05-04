@@ -24,75 +24,74 @@
 
 template <class T>
 class fuzzy_adaptor{
+private:
+    core::Expression<T>* is(std::vector<std::string>::const_iterator);
+    core::Expression<T>* phrase(std::vector<std::string>::const_iterator);
+    std::map<std::string, core::Expression<T>*> variables;
+    //fuzzy::FuzzyFactory<T> factory;
 public:
-    std::map<std::string, core::Expression<T>*> adapt(std::vector<std::string>);
+    void adapt(std::vector<std::string>);
 };
 
 template<class T>
-std::map<std::string, core::Expression<T>*> fuzzy_adaptor<T>::adapt(std::vector<std::string> input) {
-    std::map<std::string, core::Expression<T>*> variables;
-    typename std::vector<std::string>::const_iterator it= input.begin();
+void fuzzy_adaptor<T>::adapt(std::vector<std::string> input) {
+    std::vector<std::string>::const_iterator it = input.begin();
     std::vector<core::Expression<T>> expressions;
-    std::cout << *it << std::endl;
     if (*it == "AndMin") {
-        fuzzy::AndMin<T> oper = fuzzy::AndMin<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("and",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::AndMin<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("and",((core::Expression<T>*)oper)));
     } else if (*it == "AndMult") {
-        fuzzy::AndMult<T> oper = fuzzy::AndMult<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("and",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::AndMult<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("and",((core::Expression<T>*)oper)));
     } else {
-        fuzzy::AndMin<T> oper = fuzzy::AndMin<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("and",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::AndMin<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("and",((core::Expression<T>*)oper)));
     }
     ++it;
-    std::cout << *it << std::endl;
     if (*it == "OrMax") {
-        fuzzy::OrMax<T> oper = fuzzy::OrMax<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("or",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::OrMax<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("or",((core::Expression<T>*)oper)));
     } else if (*it == "OrPlus") {
-        fuzzy::OrPlus<T> oper = fuzzy::OrPlus<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("or",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::OrPlus<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("or",((core::Expression<T>*)oper)));
     } else {
-        fuzzy::OrMax<T> oper = fuzzy::OrMax<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("or",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::OrMax<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("or",((core::Expression<T>*)oper)));
     }
     ++it;
-    std::cout << *it << std::endl;
     if (*it == "ThenMin") {
-        fuzzy::ThenMin<T> oper = fuzzy::ThenMin<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("then",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::ThenMin<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("then",((core::Expression<T>*)oper)));
     } else if (*it == "ThenMult") {
-        fuzzy::ThenMult<T> oper = fuzzy::ThenMult<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("then",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::ThenMult<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("then",((core::Expression<T>*)oper)));
     } else {
-        fuzzy::ThenMin<T> oper = fuzzy::ThenMin<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("then",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::ThenMin<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("then",((core::Expression<T>*)oper)));
     }
     ++it;
-    std::cout << *it << std::endl;
     if (*it == "CogDefuzz") {
-        fuzzy::CogDefuzz<T> oper = fuzzy::CogDefuzz<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("defuzz",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::CogDefuzz<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("defuzz",((core::Expression<T>*)oper)));
     } else {
-        fuzzy::CogDefuzz<T> oper = fuzzy::CogDefuzz<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("defuzz",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::CogDefuzz<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("defuzz",((core::Expression<T>*)oper)));
     }
     ++it;
-    std::cout << *it << std::endl;
     if (*it == "AggMax") {
-        fuzzy::AggMax<T> oper = fuzzy::AggMax<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("agg",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::AggMax<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("agg",((core::Expression<T>*)oper)));
     } else if (*it == "AggPlus") {
-        fuzzy::AggPlus<T> oper = fuzzy::AggPlus<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("agg",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::AggPlus<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("agg",((core::Expression<T>*)oper)));
     } else {
-        fuzzy::AggMax<T> oper = fuzzy::AggMax<T>();
-        variables.insert( std::pair<std::string, core::Expression<T>*>("agg",((core::Expression<T>*)&oper)));
+        auto* oper = new fuzzy::AggMax<T>();
+        variables.insert( std::pair<std::string, core::Expression<T>*>("agg",((core::Expression<T>*)oper)));
     }
-    //fuzzy::FuzzyFactory<T> f(variables["and"],variables["or"],variables["not"],variables["then"],variables["agg"]);
     ++it;
-    fuzzy::NotMinus1<T> oper = fuzzy::NotMinus1<T>();
-    variables.insert( std::pair<std::string, core::Expression<T>*>("not",((core::Expression<T>*)&oper)));
+    auto* oper = new fuzzy::NotMinus1<T>();
+    variables.insert( std::pair<std::string, core::Expression<T>*>("not",((core::Expression<T>*)oper)));
+    //factory(variables["and"],variables["or"],variables["not"],variables["then"],variables["agg"]);
     bool membership = true;
     while (membership) {
         if (*it == "triangle") {
@@ -102,8 +101,8 @@ std::map<std::string, core::Expression<T>*> fuzzy_adaptor<T>::adapt(std::vector<
             max = atof(it++->c_str());
             step = atof(it++->c_str());
             std::string name = *it++;
-            //fuzzy::IsTriangle<T> shape(&min, &max, &step);
-            //variables.insert(std::pair<std::string, core::Expression<T> *>(name, ((core::Expression<T> *) &shape)));
+            auto* shape = new fuzzy::IsTriangle<T>(min, max, step);
+            variables.insert(std::pair<std::string, core::Expression<T> *>(name, ((core::Expression<T> *) shape)));
         } else
             membership = false;
     }
@@ -112,11 +111,48 @@ std::map<std::string, core::Expression<T>*> fuzzy_adaptor<T>::adapt(std::vector<
         auto* vm = new core::ValueModel<T>(atof(it++->c_str()));
         variables.insert( std::pair<std::string, core::Expression<T>*>(name,((core::Expression<T>*)vm)));
     }
+    std::vector<core::Expression<T>*> phrases;
     while (it != input.end()) {
+        if (*it == "newphrase"){
+            phrases.push_back(phrase(it));
+        }
+        it++;
+    }
+}
+
+template<class T>
+core::Expression<T> *fuzzy_adaptor<T>::phrase(std::vector<std::string>::const_iterator it) {
+    auto it2 = it;
+    core::Expression<T>* val;
+    while (*it != "then") {
         std::cout << *it << std::endl;
         it++;
     }
-    return variables;
+    //val = factory.NewThen(is(it2),is(it));
+    return val;
+}
+
+template<class T>
+core::Expression<T> *fuzzy_adaptor<T>::is(std::vector<std::string>::const_iterator it) {
+    core::Expression<T>* v1;
+    core::Expression<T>* v2;
+    v1 = variables[*it];
+    it++;
+    if (*it == "not") {
+        it++;
+        //v2 = factory.NewNot(variables[*it]);
+    } else {
+        it++;
+        v2 = variables[*it];
+    }
+    it++;
+    //auto* is = factory.NewIs(v1,v2);
+    if (*it == "and") {
+    //   return factory.NewAnd(is,is(it));
+    } else if (*it == "or") {
+    //    return factory.NewOr(is,is(it));
+    }
+    return is;
 }
 
 #endif //CLIONTEST_FUZZY_ADAPTOR_H
