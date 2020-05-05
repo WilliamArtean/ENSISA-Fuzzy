@@ -264,6 +264,8 @@ void testSugeno() {
 }
 
 void testShadowExpressions() {
+    testUnaryShadowExpression();
+    testBinaryShadowExpression();
     testNaryShadowExpression();
 }
 
