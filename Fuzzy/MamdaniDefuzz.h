@@ -84,7 +84,7 @@ namespace fuzzy {
         for (T i= min ;i <= max ;i += step) {
             value->setValue(i);
             y.push_back(((core::BinaryExpressionModel<T>*)expression)->evaluate());
-            x.push_back(value->evaluate());
+            x.push_back(i);
         }
         return Shape(x,y);
     }

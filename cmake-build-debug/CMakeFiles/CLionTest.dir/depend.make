@@ -50,6 +50,7 @@ CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\NotMinus1.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\Operator.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\OrMax.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\OrPlus.h
+CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\SugenoThen.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\ThenMin.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\ThenMult.h
 

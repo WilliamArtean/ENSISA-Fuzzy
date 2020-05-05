@@ -346,9 +346,9 @@ void testFactory() {
     fuzzy::IsTriangle<double> average(10., 15., 20.);
     fuzzy::IsTriangle<double> generous(20., 25., 30.);
 
-    core::ValueModel<double> service(0);
-    core::ValueModel<double> food(0);
-    core::ValueModel<double> tips(0);
+    core::ValueModel<double> service(5);
+    core::ValueModel<double> food(7);
+    core::ValueModel<double> tips(10);
 
     core::Expression<double> *r =
             f.newAgg(
@@ -369,7 +369,7 @@ void testFactory() {
             );
 
     core::Expression<double> *system = f.newMamdaniDefuzz(&tips, reinterpret_cast<core::BinaryExpressionModel<double> *>(r), 0, 25, 1);
-    system->evaluate();
+    std::cout << std::endl << "Evaluate defuzz : " << system->evaluate();
 
 }
 
