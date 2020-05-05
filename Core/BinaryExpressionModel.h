@@ -5,6 +5,7 @@
 #ifndef CLIONTEST_BINARYEXPRESSIONMODEL_H
 #define CLIONTEST_BINARYEXPRESSIONMODEL_H
 
+#include "../Fuzzy/SugenoThen.h"
 #include "BinaryExpression.h"
 
 namespace core {
@@ -24,6 +25,8 @@ namespace core {
 
         T evaluate() const;
         T evaluate(Expression<T>* l, Expression<T>* r) const;
+
+        T getPremiseValue() const;
     };
 
     template<class T>
@@ -42,6 +45,7 @@ namespace core {
     T BinaryExpressionModel<T>::evaluate() const {
         if (leftOperand != NULL && rightOperand != NULL) {
             return evaluate(leftOperand, rightOperand);
+
         }
         return NULL;
     }
@@ -52,6 +56,13 @@ namespace core {
             return expressionOperator->evaluate(l, r);
         }
         return NULL;
+    }
+
+    template <class T>
+    T BinaryExpressionModel<T>::getPremiseValue() const {
+        //std::cout << std::endl << "VOUS AVEZ APPELE LA METHODE getPremiseValue() DE LA CLASSE BinaryExpressionModel<T>";
+        fuzzy::SugenoThen<T> *sugenoOperator = (fuzzy::SugenoThen<T> *) expressionOperator;
+        return sugenoOperator->getPremiseValue();
     }
 
 }

@@ -15,6 +15,7 @@ namespace core {
         virtual T evaluate(Expression<T>* l, Expression<T>* r) const = 0;
     };
 
+
 }
 
 #endif //CLIONTEST_BINARYEXPRESSION_H

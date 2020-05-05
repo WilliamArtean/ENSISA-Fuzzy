@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="CLionTest" targetName="CLionTest" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug-Visual Studio" CONFIG_NAME="Debug" TOOLCHAIN_NAME="Visual Studio" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="78278fac-88ee-44c1-be05-3ee4de2b0007" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/BinaryExpression.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/BinaryExpression.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/BinaryExpressionModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/BinaryExpressionModel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Expression.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Expression.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/NaryExpressionModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/NaryExpressionModel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fuzzy/SugenoDefuzz.h" beforeDir="false" afterPath="$PROJECT_DIR$/Fuzzy/SugenoDefuzz.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fuzzy/SugenoThen.h" beforeDir="false" afterPath="$PROJECT_DIR$/Fuzzy/SugenoThen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-Visual Studio" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/WilliamArtean/ENSISA-Fuzzy.git" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WqSxNrcwTv97dtswWievktyTJX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Developpement\C++\CLionTest\Core" />
+      <recent name="D:\Developpement\C++\CLionTest\Fuzzy" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CLionTest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLionTest" TARGET_NAME="CLionTest" CONFIG_NAME="Debug-Visual Studio" RUN_TARGET_PROJECT_NAME="CLionTest" RUN_TARGET_NAME="CLionTest">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78278fac-88ee-44c1-be05-3ee4de2b0007" name="Default Changelist" comment="" />
+      <created>1579875880524</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579875880524</updated>
+      <workItem from="1579875888538" duration="82000" />
+      <workItem from="1580054749781" duration="4042000" />
+      <workItem from="1580201509203" duration="6567000" />
+      <workItem from="1580288548414" duration="6822000" />
+      <workItem from="1580478889593" duration="497000" />
+      <workItem from="1580914364427" duration="2792000" />
+      <workItem from="1583485816084" duration="2312000" />
+      <workItem from="1583488154570" duration="49000" />
+      <workItem from="1583488354431" duration="3910000" />
+      <workItem from="1587726564224" duration="12229000" />
+      <workItem from="1588230850448" duration="2582000" />
+      <workItem from="1588324846948" duration="2192000" />
+      <workItem from="1588344381518" duration="2446000" />
+      <workItem from="1588406915546" duration="6115000" />
+      <workItem from="1588505314615" duration="710000" />
+      <workItem from="1588506590400" duration="2884000" />
+      <workItem from="1588512305467" duration="5186000" />
+      <workItem from="1588523476526" duration="860000" />
+      <workItem from="1588581225951" duration="705000" />
+      <workItem from="1588594360477" duration="10278000" />
+      <workItem from="1588609701167" duration="734000" />
+      <workItem from="1588625734143" duration="5609000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="436" y="100" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580207247918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="436" y="100" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1580207247918" />
+    <state width="1481" height="166" key="GridCell.Tab.0.bottom" timestamp="1588631351373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588631351373" />
+    <state width="1481" height="166" key="GridCell.Tab.0.center" timestamp="1588631351373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="166" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588631351373" />
+    <state width="1481" height="166" key="GridCell.Tab.0.left" timestamp="1588631351373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="166" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588631351373" />
+    <state width="1481" height="166" key="GridCell.Tab.0.right" timestamp="1588631351373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1481" height="166" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588631351373" />
+    <state x="289" y="0" key="SettingsEditor" timestamp="1583488622893">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="289" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583488622893" />
+    <state x="451" y="183" key="com.intellij.ide.util.TipDialog" timestamp="1588625752374">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="451" y="183" key="com.intellij.ide.util.TipDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1580054752602" />
+    <state x="451" y="183" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588625752374" />
+    <state x="341" y="183" key="run.anything.popup" timestamp="1587729803745">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="341" y="183" key="run.anything.popup/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1580061500290" />
+    <state x="341" y="183" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1587729803745" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1587729227211">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1580056139556" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587729227211" />
+  </component>
+</project>

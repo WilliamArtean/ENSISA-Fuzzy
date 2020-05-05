@@ -2,21 +2,21 @@ fuzzy System {
 	operators { 
 		and = AndMin
 		or = OrMax
-		then = ThenMin
+		then = ThenMult
 		defuzz = CogDefuzz
 		agg = Aggplus
 	}
 	membership {
-		poor = triangle 0.5 10 15
-		cheap = triangle 0.5 10 15
-		good = triangle 0.5 10 15
+		poor = triangle -5 0 5
+		cheap = triangle 0 5 10
+		good = triangle 0 5 10
+		average = triangle 10 15 20
 	}
 	values {
-		food = 5
-		service = 5
+		food = 8
+		service = 3
 		tip = 5
 	}
-	if service is not poor or food is poor then tip is cheap
-    if service is good or food is cheap then tip is good
-    if food is bonne and chien is prommene then tip is good
+	if service is poor then tip is cheap
+    if service is good then tip is average
 }

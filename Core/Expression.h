@@ -11,8 +11,14 @@ namespace core {
     class Expression {
     public:
         virtual T evaluate() const = 0;
+        virtual T getPremiseValue() const;
     };
 
+    template <class T>
+    T Expression<T>::getPremiseValue() const {
+        //std::cout << std::endl << "VOUS AVEZ APPELE LA METHODE getPremiseValue() DE LA CLASSE Expression<T>";
+        return 0;
+    }
 }
 
 #endif //CLIONTEST_EXPRESSION_H

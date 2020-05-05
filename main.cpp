@@ -5,6 +5,7 @@
 #include "Core/ValueModel.h"
 #include "Core/UnaryExpressionModel.h"
 #include "Core/BinaryExpressionModel.h"
+#include "Core/NaryExpressionModel.h"
 #include "Fuzzy/NotMinus1.h"
 #include "Fuzzy/OrMax.h"
 #include "Fuzzy/AndMin.h"
@@ -18,6 +19,12 @@
 #include "Fuzzy/IsGbellmf.h"
 #include "Fuzzy/IsGaussianmf.h"
 #include "Fuzzy/IsTriangle.h"
+#include "Fuzzy/SugenoThen.h"
+#include "Fuzzy/SugenoConclusion.h"
+#include "Fuzzy/SugenoDefuzz.h"
+#include "Compiler/fuzzy_driver.h"
+#include "Compiler/fuzzy_adaptor.h"
+#include "Core/NaryShadowExpression.h"
 
 
 void testAndMin();
@@ -102,16 +109,6 @@ void testValuedConstructorCog() {
     assert(((core::BinaryExpressionModel<double>*)(cogD.getExpression()))->evaluate() == bem.evaluate());
 }
 
-void testMamdaniCogDefuzz() {
-    std::cout << std::endl << "Test Defuzz CogDefuzz/MamdaniDefuzz";
-    core::ValueModel<double> x(0);
-    core::ValueModel<double> y(0.1);
-    fuzzy::OrPlus<double> op;
-    core::BinaryExpressionModel<double> bem(&op, &x, &y);
-    fuzzy::CogDefuzz<double> cogD;
-    fuzzy::CogDefuzz<double>::Shape s = cogD.BuildShape(0,0.5,0.1, &x, &bem);
-    assert(round(100*cogD.Defuzz(s)) == 35);
-}
 
 void testMamdaniCogEvaluate() {
     std::cout << std::endl << "Test Evaluate CogDefuzz/MamdaniDefuzz";
@@ -119,8 +116,146 @@ void testMamdaniCogEvaluate() {
     core::ValueModel<double> y(0.1);
     fuzzy::OrPlus<double> op;
     core::BinaryExpressionModel<double> bem(&op, &x, &y);
-    fuzzy::CogDefuzz<double> cogD(&x, &bem, 0, 0.5, 0.1);
-    assert(round(100*cogD.Evaluate()) == 35);
+    fuzzy::CogDefuzz<double> cogD(&x, &bem, 0, 20, 1);
+    std::cout << cogD.evaluate();
+    //assert(round(100*cogD.evaluate()) == 35);
+}
+
+void testNaryExpressionModel() {
+    std::cout << std::endl << "default ctor test NaryExpressionModel double";
+    core::NaryExpressionModel<double> nem;
+
+    std::cout << std::endl << "valued ctor test NaryExpressionModel double";
+    //SugenoConclusion
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+
+    fuzzy::SugenoDefuzz<double> sd1;
+
+    //Vector des valeurs d'entrée
+    core::ValueModel<double> vm1(0.1);
+    core::ValueModel<double> vm2(0.2);
+    core::ValueModel<double> vm3(0.3);
+    fuzzy::SugenoThen<double> st;
+    core::BinaryExpressionModel<double> bem1(&st, &vm1, &vm2);
+    core::BinaryExpressionModel<double> bem2(&st, &vm3, &vm1);
+
+
+    vector<core::Expression<double> *> inputs = {&bem1, &bem2};
+
+    core::NaryExpressionModel<double> nem2(&sd1, inputs);
+
+    //std::cout << std::endl << nem2.evaluate();
+    assert(nem2.evaluate() == 0.125);
+
+    //Deuxième vecteur - test de evaluate() avec paramètres
+
+    //std::cout << std::endl << nem2.evaluate(inputs);
+    assert(nem2.evaluate(inputs) == 0.125);
+}
+
+void testSugenoConclusion() {
+    std::cout << std::endl << "default ctor test SugenoConclusion double";
+    fuzzy::SugenoConclusion<double> sugenoConclusionNull;
+
+    std::cout << std::endl << "valued ctor test SugenoConclusion double";
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+
+    core::ValueModel<double> vm(0.3);
+    core::ValueModel<double> vm2(0.5);
+    core::ValueModel<double> vm3(0.8);
+    fuzzy::AndMin<double> am;
+    core::BinaryExpressionModel<double> bem1(&am, &vm, &vm2);
+    core::BinaryExpressionModel<double> bem2(&am, &vm3, &vm);
+    vector<core::Expression<double> *> operands = {&bem1, &bem2};
+
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+
+    assert(sc1.evaluate(operands) == 0.38);
+}
+
+void testSugenoThen() {
+    std::cout << std::endl << "default ctor test SugenoThen double";
+    fuzzy::SugenoThen<double> st;
+
+    //SugenoConclusion et BinaryExpressionModel
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+    core::ValueModel<double> vm1(0.3);
+    core::ValueModel<double> vm2(0.5);
+    fuzzy::AndMin<double> am;
+    core::BinaryExpressionModel<double> bem1(&am, &vm1, &vm2);
+
+    assert(st.evaluate(&vm2, &bem1) == 0.3);
+    assert(st.getPremiseValue() == 0.5);
+}
+
+void testSugenoDefuzz() {
+    //vector de SugenoThen
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+    core::ValueModel<double> vm1(0.4);
+    core::ValueModel<double> vm2(0.5);
+    core::ValueModel<double> vm3(0.6);
+
+    fuzzy::SugenoThen<double> st;
+
+    core::BinaryExpressionModel<double> bem1(&st, &vm1, &vm2);
+    core::BinaryExpressionModel<double> bem2(&st, &vm3, &vm1);
+
+
+    vector<core::Expression<double> *> operands = {&bem1, &bem2};
+
+    std::cout << std::endl << "test SugenoDefuzz double";
+    fuzzy::SugenoDefuzz<double> sd;
+
+    //std::cout << std::endl << sd.evaluate(operands);
+    assert(sd.evaluate(operands) == 0.44);
+}
+
+void testUnaryShadowExpression() {
+    std::cout << std::endl << "test UnaryShadowExpression";
+    fuzzy::IsTriangle<double> it(0., 2., 4.);
+    core::ValueModel<double> vm(1.);
+
+    core::UnaryShadowExpression<double> use;
+    use.setTarget(&it);
+
+    assert(use.getTarget() == &it);
+    assert(use.evaluate(&vm) == 0.5);
+}
+
+void testBinaryShadowExpression() {
+    std::cout << std::endl << "test BinaryShadowExpression";
+    core::ValueModel<double> vm(0.2);
+    core::ValueModel<double> vm2(0.5);
+    fuzzy::AndMin<double> am;
+
+    core::BinaryShadowExpression<double> bse;
+    bse.setTarget(&am);
+
+    assert(bse.getTarget() == &am);
+    assert(bse.evaluate(&vm, &vm2) == vm.evaluate());
+}
+
+void testNaryShadowExpression() {
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+    core::ValueModel<double> vm1(0.4);
+    core::ValueModel<double> vm2(0.5);
+    core::ValueModel<double> vm3(0.6);
+    fuzzy::SugenoThen<double> st;
+    core::BinaryExpressionModel<double> bem1(&st, &vm1, &vm2);
+    core::BinaryExpressionModel<double> bem2(&st, &vm3, &vm1);
+    vector<core::Expression<double> *> operands = {&bem1, &bem2};
+
+    fuzzy::SugenoDefuzz<double> sd;
+
+    std::cout << std::endl << "test NaryShadowExpression double";
+    core::NaryShadowExpression<double> nse;
+    nse.setTarget(&sd);
+    assert(nse.getTarget() == &sd);
+    assert(nse.evaluate(operands) == 0.44);
 }
 
 void testExpressions() {
@@ -128,6 +263,7 @@ void testExpressions() {
     testUnaryExpressionModel();
     testBinaryExpressionModel();
     testValuedConstructorCog();
+    testNaryExpressionModel();
 }
 
 
@@ -137,6 +273,112 @@ void testOperator() {
 }
 
 
+void testSugeno() {
+    testSugenoConclusion();
+    testSugenoDefuzz();
+    testSugenoThen();
+}
+
+void testShadowExpressions() {
+    testUnaryShadowExpression();
+    testBinaryShadowExpression();
+    testNaryShadowExpression();
+}
+
+int testCompiler() {
+    int res = 0;
+    fuzzy_adaptor<double> adaptor;
+    fuzzy_driver driver;
+    if (false)  //show parcing
+    driver.trace_parsing = true;
+    if (false)  //show scanning
+    driver.trace_scanning = true;
+    if (!driver.parse ("/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/instructions.txt")) {
+        adaptor.adapt(driver.result);
+        std::map<std::string, core::Expression<double>*> result = adaptor.variables;
+        std::cout << "langage : " << adaptor.defuzz("tip",0,25,1);
+    }
+    res = 1;
+    return res;
+}
+
+void testFactory() {
+    fuzzy::AndMin<double> opAnd;
+    fuzzy::AndMult<double> opAnd2;
+    fuzzy::OrMax<double> opOr;
+    fuzzy::OrPlus<double> opOr2;
+    fuzzy::NotMinus1<double> opNot;
+    fuzzy::NotMinus1<double> opNot2;
+    fuzzy::ThenMin<double> opThen;
+    fuzzy::ThenMult<double> opThen2;
+    fuzzy::AggPlus<double> opAgg;
+    fuzzy::CogDefuzz<double> opDefuzz;
+
+    fuzzy::FuzzyFactory<double> f(&opAnd,&opOr,&opNot,&opThen,&opAgg,&opDefuzz);
+    fuzzy::FuzzyFactory<double> f2(&f);
+
+    core::ValueModel<double> vm1(0.4);
+    core::ValueModel<double> vm2(0.5);
+
+    auto* andtest = f.newAnd(&vm1, &vm2);
+    assert(andtest->evaluate() == vm1.evaluate());
+
+    auto* thentest = f.newThen(&vm1, &vm2);
+    assert(thentest->evaluate() == vm1.evaluate());
+
+    auto* ortest = f.newOr(&vm1, &vm2);
+    assert(ortest->evaluate() == vm2.evaluate());
+
+    auto * aggtest = f.newAgg(&vm1, &vm2);
+    assert(aggtest->evaluate() == vm1.evaluate()+vm2.evaluate());
+
+    auto * nottest = f.newNot(&vm1);
+    assert(nottest->evaluate() == 1 - vm1.evaluate());
+
+    vm1.setValue(4);
+    fuzzy::IsTriangle<double> it(0., 5., 10.);
+    auto * istest = f.newIs(&vm1, &it);
+    std::cout << istest->evaluate();
+    assert(round(100*istest->evaluate()) == 80);
+
+
+    f.changeOr(&opOr2);
+    f.changeAnd(&opAnd2);
+    f.changeThen(&opThen2);
+    f.changeNot(&opNot2);
+
+    fuzzy::IsTriangle<double> poor(-5., 0., 5.);
+    fuzzy::IsTriangle<double> good(0., 5., 10.);
+    fuzzy::IsTriangle<double> excellent(5., 10., 15.);
+    fuzzy::IsTriangle<double> cheap(-0., 5., 10.);
+    fuzzy::IsTriangle<double> average(10., 15., 20.);
+    fuzzy::IsTriangle<double> generous(20., 25., 30.);
+
+    core::ValueModel<double> service(3);
+    core::ValueModel<double> food(8);
+    core::ValueModel<double> tips(0);
+
+    core::Expression<double> *r =
+            f.newAgg(
+                    f.newAgg(
+                            f.newThen(
+                                    f.newIs(&service,&poor),
+                                    f.newIs(&tips,&cheap)
+                            ),
+                            f.newThen(
+                                    f.newIs(&service,&good),
+                                    f.newIs(&tips,&average)
+                            )
+                    ),
+                    f.newThen(
+                            f.newIs(&service,&excellent),
+                            f.newIs(&tips,&generous)
+                    )
+            );
+    core::Expression<double> *system = f.newMamdaniDefuzz(&tips, r, 0, 25, 1);
+    std::cout << std::endl << "Evaluate defuzz : " << system->evaluate();
+
+}
 int main() {
     std::cout << std::endl << "Test ValueModel";
     core::ValueModel<int> vmint = core::ValueModel<int>(15);
@@ -146,7 +388,6 @@ int main() {
     assert(vmint.evaluate() == 42);
     core::ValueModel<double> vmdouble = core::ValueModel<double>(0.1);
     core::ValueModel<double> vmdouble2 = core::ValueModel<double>(165.44);
-
 
 
     std::cout << std::endl << "Test NotMinus1 (int and double)";
@@ -163,7 +404,6 @@ int main() {
     core::UnaryExpressionModel<int> uem2 = core::UnaryExpressionModel<int>();
 
 
-
     std::cout << std::endl << "Test OrMax";
     fuzzy::OrMax<int> orMax = fuzzy::OrMax<int>();
     assert(orMax.evaluate(&vmint, &vmint2) == 42);
@@ -174,7 +414,7 @@ int main() {
 
     std::cout << std::endl << "Test OrPlus";
     fuzzy::OrPlus<int> orPlus = fuzzy::OrPlus<int>();
-    assert(orPlus.evaluate(&vmint, &vmint2) == 42-1085);
+    assert(orPlus.evaluate(&vmint, &vmint2) == 42 - 1085);
 
     fuzzy::OrPlus<double> orPlusDouble = fuzzy::OrPlus<double>();
     assert(orPlusDouble.evaluate(&vmdouble, &vmdouble2) == 1);
@@ -190,10 +430,10 @@ int main() {
 
     std::cout << std::endl << "Test AndMult";
     fuzzy::AndMult<int> andMult = fuzzy::AndMult<int>();
-    assert(andMult.evaluate(&vmint, &vmint2) == 42*-1085);
+    assert(andMult.evaluate(&vmint, &vmint2) == 42 * -1085);
 
     fuzzy::AndMult<double> andMultDouble = fuzzy::AndMult<double>();
-    assert(andMultDouble.evaluate(&vmdouble, &vmdouble2) == 0.1*165.44);
+    assert(andMultDouble.evaluate(&vmdouble, &vmdouble2) == 0.1 * 165.44);
 
 
     std::cout << std::endl << "Test ThenMin";
@@ -206,10 +446,10 @@ int main() {
 
     std::cout << std::endl << "Test AndMult";
     fuzzy::ThenMult<int> thenMult = fuzzy::ThenMult<int>();
-    assert(thenMult.evaluate(&vmint, &vmint2) == 42*-1085);
+    assert(thenMult.evaluate(&vmint, &vmint2) == 42 * -1085);
 
     fuzzy::ThenMult<double> thenMultDouble = fuzzy::ThenMult<double>();
-    assert(thenMultDouble.evaluate(&vmdouble, &vmdouble2) == 0.1*165.44);
+    assert(thenMultDouble.evaluate(&vmdouble, &vmdouble2) == 0.1 * 165.44);
 
 
     std::cout << std::endl << "Test AggMax";
@@ -222,7 +462,7 @@ int main() {
 
     std::cout << std::endl << "Test AggPlus";
     fuzzy::AggPlus<int> aggPlus = fuzzy::AggPlus<int>();
-    assert(aggPlus.evaluate(&vmint, &vmint2) == 42-1085);
+    assert(aggPlus.evaluate(&vmint, &vmint2) == 42 - 1085);
 
     fuzzy::AggPlus<double> aggPlusDouble = fuzzy::AggPlus<double>();
     assert(aggPlusDouble.evaluate(&vmdouble, &vmdouble2) == 1);
@@ -234,40 +474,46 @@ int main() {
     core::BinaryExpressionModel<int> bem2 = core::BinaryExpressionModel<int>();
 
     core::BinaryExpressionModel<int> bem3(&thenMult, &vmint, &vmint2);
-    assert(bem3.evaluate() == 42*-1085);
-
+    assert(bem3.evaluate() == 42 * -1085);
 
 
     testExpressions();
     testOperator();
+    testValueModel();
+    testNotMinus1();
+    testAndMin();
+    testSugeno();
     testBuildShape();
-    testMamdaniCogDefuzz();
     testMamdaniCogEvaluate();
-
+    testShadowExpressions();
+    testFactory();
 
     //Omar Testing Part
     //testing IsTriangle
-    std::cout <<  std::endl <<"isTriangle";
+    std::cout << std::endl << "isTriangle";
     core::ValueModel<float> vmForTriangle;
     vmForTriangle.setValue(3.5);
-    fuzzy::IsTriangle<float> isTriangle(1,4,5);
-    std::cout << std::endl<<isTriangle.evaluate(&vmForTriangle);
+    fuzzy::IsTriangle<float> isTriangle(1, 4, 5);
+    std::cout << std::endl << isTriangle.evaluate(&vmForTriangle);
 
 
 
     //testing isGaussian
-    std::cout <<  std::endl <<"is Gaussian";
+    std::cout << std::endl << "is Gaussian";
     core::ValueModel<float> vmForGaussian;
     vmForGaussian.setValue(0);
     fuzzy::IsGaussianmf<float> isGaussianmf(0.5, 0);
-    std::cout << std::endl<<isGaussianmf.evaluate(&vmForGaussian);
+    std::cout << std::endl << isGaussianmf.evaluate(&vmForGaussian);
 
     //testing isGbellmf
-    std::cout <<  std::endl <<"is GBell";
+    std::cout << std::endl << "is GBell";
     core::ValueModel<float> vmForGbell;
     vmForGbell.setValue(100);
-    fuzzy::IsGbellmf<float> isGbellmf(20,4,100);
-    std::cout << std::endl<<isGbellmf.evaluate(&vmForGbell);
+    fuzzy::IsGbellmf<float> isGbellmf(20, 4, 100);
+    std::cout << std::endl << isGbellmf.evaluate(&vmForGbell) << std::endl ;
+
+    //Compiler
+    testCompiler();
 
     return 0;
 }
