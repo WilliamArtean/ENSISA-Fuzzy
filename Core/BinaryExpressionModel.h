@@ -5,6 +5,7 @@
 #ifndef CLIONTEST_BINARYEXPRESSIONMODEL_H
 #define CLIONTEST_BINARYEXPRESSIONMODEL_H
 
+#include <SugenoThen.h>
 #include "BinaryExpression.h"
 
 namespace core {

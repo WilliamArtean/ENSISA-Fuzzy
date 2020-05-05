@@ -82,32 +82,32 @@ namespace fuzzy{
 
     template <class T>
     core::Expression<T>* FuzzyFactory<T>::newAnd(core::Expression<T> *l, core::Expression<T> *r) {
-        return newBinary(_AndShadow, l,r);
+        return this->newBinary(_AndShadow, l,r);
     }
 
     template <class T>
     core::Expression<T>* FuzzyFactory<T>::newOr(core::Expression<T> *l, core::Expression<T> *r) {
-        return newBinary(_OrShadow, l, r);
+        return this->newBinary(_OrShadow, l, r);
     }
 
     template <class T>
     core::Expression<T>* FuzzyFactory<T>::newThen(core::Expression<T> *l, core::Expression<T> *r) {
-        return newBinary(_ThenShadow, l, r);
+        return this->newBinary(_ThenShadow, l, r);
     }
 
     template <class T>
     core::Expression<T>* FuzzyFactory<T>::newNot(core::Expression<T> *o) {
-        return newUnary(_NotShadow, o);
+        return this->newUnary(_NotShadow, o);
     }
 
     template <class T>
     core::Expression<T>* FuzzyFactory<T>::newIs(core::Expression<T> *o, fuzzy::Is<T> *s) {
-        return newUnary(s,o);
+        return this->newUnary(s,o);
     }
 
     template <class T>
     core::Expression<T>* FuzzyFactory<T>::newAgg(core::Expression<T> *l, core::Expression<T> *r) {
-        return newBinary(_AggShadow, l, r);
+        return this->newBinary(_AggShadow, l, r);
     }
 
     template <class T>
@@ -117,7 +117,7 @@ namespace fuzzy{
         ( (CogDefuzz<T> *) _MamdaniDefuzzShadow->getTarget())->setStep(step);
         ( (CogDefuzz<T> *) _MamdaniDefuzzShadow->getTarget())->setValue(value);
         ( (CogDefuzz<T> *) _MamdaniDefuzzShadow->getTarget())->setExpression(expression);
-        return newBinary(_MamdaniDefuzzShadow, value, expression);
+        return this->newBinary(_MamdaniDefuzzShadow, value, expression);
     }
 
 
