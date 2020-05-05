@@ -131,6 +131,12 @@
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/ExpressionFactory.h">
 			<Option target="CLionTest"/>
 		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/NaryExpression.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/NaryExpressionModel.h">
+			<Option target="CLionTest"/>
+		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
@@ -192,6 +198,15 @@
 			<Option target="CLionTest"/>
 		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/OrPlus.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/SugenoConclusion.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/SugenoDefuzz.h">
+			<Option target="CLionTest"/>
+		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/SugenoThen.h">
 			<Option target="CLionTest"/>
 		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/Then.h">

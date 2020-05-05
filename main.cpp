@@ -5,6 +5,7 @@
 #include "Core/ValueModel.h"
 #include "Core/UnaryExpressionModel.h"
 #include "Core/BinaryExpressionModel.h"
+#include "Core/NaryExpressionModel.h"
 #include "Fuzzy/NotMinus1.h"
 #include "Fuzzy/OrMax.h"
 #include "Fuzzy/AndMin.h"
@@ -18,6 +19,9 @@
 #include "Fuzzy/IsGbellmf.h"
 #include "Fuzzy/IsGaussianmf.h"
 #include "Fuzzy/IsTriangle.h"
+#include "Fuzzy/SugenoThen.h"
+#include "Fuzzy/SugenoConclusion.h"
+#include "Fuzzy/SugenoDefuzz.h"
 
 
 void testAndMin();
@@ -123,11 +127,104 @@ void testMamdaniCogEvaluate() {
     assert(round(100*cogD.Evaluate()) == 35);
 }
 
+void testNaryExpressionModel() {
+    std::cout << std::endl << "default ctor test NaryExpressionModel double";
+    core::NaryExpressionModel<double> nem;
+
+    std::cout << std::endl << "valued ctor test NaryExpressionModel double";
+    //SugenoConclusion
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+
+    fuzzy::SugenoDefuzz<double> sd1;
+
+    //Vector des valeurs d'entrée
+    core::ValueModel<double> vm1(0.1);
+    core::ValueModel<double> vm2(0.2);
+    core::ValueModel<double> vm3(0.3);
+    fuzzy::SugenoThen<double> st;
+    core::BinaryExpressionModel<double> bem1(&st, &vm1, &vm2);
+    core::BinaryExpressionModel<double> bem2(&st, &vm3, &vm1);
+
+
+    vector<core::Expression<double> *> inputs = {&bem1, &bem2};
+
+    core::NaryExpressionModel<double> nem2(&sd1, inputs);
+
+    //std::cout << std::endl << nem2.evaluate();
+    assert(nem2.evaluate() == 0.125);
+
+    //Deuxième vecteur - test de evaluate() avec paramètres
+
+    //std::cout << std::endl << nem2.evaluate(inputs);
+    assert(nem2.evaluate(inputs) == 0.125);
+}
+
+void testSugenoConclusion() {
+    std::cout << std::endl << "default ctor test SugenoConclusion double";
+    fuzzy::SugenoConclusion<double> sugenoConclusionNull;
+
+    std::cout << std::endl << "valued ctor test SugenoConclusion double";
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+
+    core::ValueModel<double> vm(0.3);
+    core::ValueModel<double> vm2(0.5);
+    core::ValueModel<double> vm3(0.8);
+    fuzzy::AndMin<double> am;
+    core::BinaryExpressionModel<double> bem1(&am, &vm, &vm2);
+    core::BinaryExpressionModel<double> bem2(&am, &vm3, &vm);
+    vector<core::Expression<double> *> operands = {&bem1, &bem2};
+
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+
+    assert(sc1.evaluate(operands) == 0.38);
+}
+
+void testSugenoThen() {
+    std::cout << std::endl << "default ctor test SugenoThen double";
+    fuzzy::SugenoThen<double> st;
+
+    //SugenoConclusion et BinaryExpressionModel
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+    core::ValueModel<double> vm1(0.3);
+    core::ValueModel<double> vm2(0.5);
+    fuzzy::AndMin<double> am;
+    core::BinaryExpressionModel<double> bem1(&am, &vm1, &vm2);
+
+    assert(st.evaluate(&vm2, &bem1) == 0.3);
+    assert(st.getPremiseValue() == 0.5);
+}
+
+void testSugenoDefuzz() {
+    //vector de SugenoThen
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+    core::ValueModel<double> vm1(0.4);
+    core::ValueModel<double> vm2(0.5);
+    core::ValueModel<double> vm3(0.6);
+
+    fuzzy::SugenoThen<double> st;
+
+    core::BinaryExpressionModel<double> bem1(&st, &vm1, &vm2);
+    core::BinaryExpressionModel<double> bem2(&st, &vm3, &vm1);
+
+
+    vector<core::Expression<double> *> operands = {&bem1, &bem2};
+
+    std::cout << std::endl << "test SugenoDefuzz double";
+    fuzzy::SugenoDefuzz<double> sd;
+
+    //std::cout << std::endl << sd.evaluate(operands);
+    assert(sd.evaluate(operands) == 0.44);
+};
+
 void testExpressions() {
     testValueModel();
     testUnaryExpressionModel();
     testBinaryExpressionModel();
     testValuedConstructorCog();
+    testNaryExpressionModel();
 }
 
 
@@ -137,6 +234,13 @@ void testOperator() {
 }
 
 /*
+void testSugeno() {
+    testSugenoConclusion();
+    testSugenoDefuzz();
+    testSugenoThen();
+}
+
+
 int main() {
     std::cout << std::endl << "Test ValueModel";
     core::ValueModel<int> vmint = core::ValueModel<int>(15);
@@ -240,6 +344,10 @@ int main() {
 
     testExpressions();
     testOperator();
+    testValueModel();
+    testNotMinus1();
+    testAndMin();
+    testSugeno();
     testBuildShape();
     testMamdaniCogDefuzz();
     testMamdaniCogEvaluate();
@@ -268,6 +376,7 @@ int main() {
     vmForGbell.setValue(100);
     fuzzy::IsGbellmf<float> isGbellmf(20,4,100);
     std::cout << std::endl<<isGbellmf.evaluate(&vmForGbell);
+    
 
     return 0;
 }

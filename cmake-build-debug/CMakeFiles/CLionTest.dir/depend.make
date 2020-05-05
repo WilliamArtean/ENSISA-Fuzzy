@@ -56,6 +56,8 @@ CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\ThenMult.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\BinaryExpression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\BinaryExpressionModel.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\Expression.h
+CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\NaryExpression.h
+CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\NaryExpressionModel.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\UnaryExpression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\UnaryExpressionModel.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\ValueModel.h
