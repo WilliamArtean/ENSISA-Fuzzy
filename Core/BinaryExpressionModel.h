@@ -6,7 +6,6 @@
 #define CLIONTEST_BINARYEXPRESSIONMODEL_H
 
 #include "BinaryExpression.h"
-#include "../Fuzzy/SugenoThen.h"
 
 namespace core {
 

@@ -250,7 +250,7 @@ int testCompiler() {
     driver.trace_parsing = true;
     if (false)  //show scanning
     driver.trace_scanning = true;
-    if (!driver.parse ("../Compiler/instructions.txt")) {
+    if (!driver.parse ("Compiler/instructions.txt")) {
         adaptor.adapt(driver.result);
     }
     res = 1;

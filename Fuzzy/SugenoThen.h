@@ -6,7 +6,6 @@
 #define CLIONTEST_SUGENOTHEN_H
 
 #include "Operator.h"
-#include "SugenoConclusion.h"
 
 namespace fuzzy {
 
