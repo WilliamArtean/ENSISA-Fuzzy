@@ -17,7 +17,7 @@ namespace core
 	};
 
 	template<class T>
-	T NaryShadowExpression<T>::evaluate(Expression<T> * operands) const
+	T NaryShadowExpression<T>::evaluate(Expression<T> operands []) const
 	{
 		if (target != null)
 		{
