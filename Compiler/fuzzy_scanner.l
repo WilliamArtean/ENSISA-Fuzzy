@@ -18,7 +18,7 @@
 static yy::location loc;
 %}
 
-%option noyywrap nounput batch debug noinput
+%option noyywrap nounput batch debug never-interactive
 
 id    [a-zA-Z0-9][a-zA-Z_.0-9]*
 blank [ \t]

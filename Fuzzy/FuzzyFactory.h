@@ -18,7 +18,6 @@
 #include "CogDefuzz.h"
 
 namespace fuzzy{
-    /*
     template <class T>
     class FuzzyFactory :public core::ExpressionFactory<T>
     {
@@ -36,13 +35,13 @@ namespace fuzzy{
         FuzzyFactory(And<T>* opAnd, Or<T>* opOr, Not<T>* opNot, Then<T>* opThen, Agg<T>* opAgg);
         FuzzyFactory(const FuzzyFactory<T>& o);
         virtual ~FuzzyFactory();
-        core::Expression<T> newAnd(core::Expression<T>* l , core::Expression<T>* r );
-        core::Expression<T> newThen(core::Expression<T>* l , core::Expression<T>* r );
-        core::Expression<T> newAgg(core::Expression<T>* l , core::Expression<T>* r );
-        core::Expression<T> newOr(core::Expression<T>* l, core::Expression<T>* r );
-        core::Expression<T> newDefuzz(core::Expression<T>* l , core::Expression<T>* r );
-        core::Expression<T> newNot(core::Expression<T>* o);
-        core::Expression<T> newIs(fuzzy::Is<T>* s,core::Expression<T>* o);
+        core::Expression<T>* newAnd(core::Expression<T>* l , core::Expression<T>* r );
+        core::Expression<T>* newThen(core::Expression<T>* l , core::Expression<T>* r );
+        core::Expression<T>* newAgg(core::Expression<T>* l , core::Expression<T>* r );
+        core::Expression<T>* newOr(core::Expression<T>* l, core::Expression<T>* r );
+        core::Expression<T>* newDefuzz(core::Expression<T>* l , core::Expression<T>* r );
+        core::Expression<T>* newNot(core::Expression<T>* o);
+        core::Expression<T>* newIs(fuzzy::Is<T>* s,core::Expression<T>* o);
 
 
         void changeAnd(fuzzy::And<T>* opAnd);
@@ -79,32 +78,32 @@ namespace fuzzy{
     }
 
     template <class T>
-    core::Expression<T> FuzzyFactory<T>::newAnd(core::Expression<T> *l, core::Expression<T> *r) {
+    core::Expression<T>* FuzzyFactory<T>::newAnd(core::Expression<T> *l, core::Expression<T> *r) {
         return newBinary(_AndShadow, l,r);
     }
 
     template <class T>
-    core::Expression<T> FuzzyFactory<T>::newOr(core::Expression<T> *l, core::Expression<T> *r) {
+    core::Expression<T>* FuzzyFactory<T>::newOr(core::Expression<T> *l, core::Expression<T> *r) {
         return newBinary(_OrShadow, l, r);
     }
 
     template <class T>
-    core::Expression<T> FuzzyFactory<T>::newThen(core::Expression<T> *l, core::Expression<T> *r) {
+    core::Expression<T>* FuzzyFactory<T>::newThen(core::Expression<T> *l, core::Expression<T> *r) {
         return newBinary(_ThenShadow, l, r);
     }
 
     template <class T>
-    core::Expression<T> FuzzyFactory<T>::newNot(core::Expression<T> *o) {
+    core::Expression<T>* FuzzyFactory<T>::newNot(core::Expression<T> *o) {
         return newUnary(_NotShadow, o);
     }
 
     template <class T>
-    core::Expression<T> FuzzyFactory<T>::newIs(fuzzy::Is<T> *s, core::Expression<T> *o) {
+    core::Expression<T>* FuzzyFactory<T>::newIs(fuzzy::Is<T> *s, core::Expression<T> *o) {
         return newUnary(s,o);
     }
 
     template <class T>
-    core::Expression<T> FuzzyFactory<T>::newAgg(core::Expression<T> *l, core::Expression<T> *r) {
+    core::Expression<T>* FuzzyFactory<T>::newAgg(core::Expression<T> *l, core::Expression<T> *r) {
         return newBinary(_AggShadow, l, r);
     }
 
@@ -126,8 +125,6 @@ namespace fuzzy{
     void FuzzyFactory<T>::chandeThen(fuzzy::Then<T> *opThen) {
         _ThenShadow->setTarget(opThen);
     }
-
-*/
 
     }
 #endif //CLIONTEST_FUZZYFACTORY_H

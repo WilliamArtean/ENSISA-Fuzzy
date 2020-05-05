@@ -5,7 +5,7 @@
 
 #include "fuzzy_driver.h"
 #include "fuzzy_adaptor.h"
-
+/*
 int
 main (int argc, char *argv[])
 {
@@ -16,9 +16,12 @@ main (int argc, char *argv[])
         driver.trace_parsing = true;
     if (false)  //show scanning
         driver.trace_scanning = true;
-    if (!driver.parse ("../instructions.txt")) {
+    if (!driver.parse ("../Compiler/instructions.txt")) {
         adaptor.adapt(driver.result);
+        auto result = adaptor.variables;
+        std::cout << result["result"]->evaluate();
     }
     res = 1;
     return res;
 }
+*/

@@ -444,7 +444,7 @@ char *yytext;
 // The location of the current token.
 static yy::location loc;
 #define YY_NO_UNPUT 1
-#define YY_NO_INPUT 1
+#define YY_NEVER_INTERACTIVE 1
 #line 27 "fuzzy_scanner.l"
   // Code run each time a pattern is matched.
   # define YY_USER_ACTION  loc.columns (yyleng);
@@ -1394,7 +1394,7 @@ YY_BUFFER_STATE b;
 #else
 #ifndef YY_ALWAYS_INTERACTIVE
 #ifndef YY_NEVER_INTERACTIVE
-extern int isatty YY_PROTO(( int ));
+//extern int isatty YY_PROTO(( int ));
 #endif
 #endif
 #endif

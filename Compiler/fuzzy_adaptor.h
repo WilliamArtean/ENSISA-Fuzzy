@@ -7,7 +7,7 @@
 
 # include <string>
 # include <map>
-#include <FuzzyFactory.h>
+#include "../Fuzzy/FuzzyFactory.h"
 #include "../Fuzzy/AndMin.h"
 #include "../Core/Expression.h"
 #include "../Fuzzy/AndMult.h"
@@ -27,10 +27,17 @@ class fuzzy_adaptor{
 private:
     core::Expression<T>* is(std::vector<std::string>::const_iterator);
     core::Expression<T>* phrase(std::vector<std::string>::const_iterator);
-    std::map<std::string, core::Expression<T>*> variables;
-    //fuzzy::FuzzyFactory<T> factory;
+    core::Expression<T>* iswofactory(std::vector<std::string>::const_iterator);
+    core::Expression<T>* phrasewofactory(std::vector<std::string>::const_iterator);
+
+
+    fuzzy::FuzzyFactory<T>* factory;
 public:
     void adapt(std::vector<std::string>);
+
+    std::map<std::string, core::Expression<T>*> variables;
+
+    fuzzy_adaptor();
 };
 
 template<class T>
@@ -91,7 +98,7 @@ void fuzzy_adaptor<T>::adapt(std::vector<std::string> input) {
     ++it;
     auto* oper = new fuzzy::NotMinus1<T>();
     variables.insert( std::pair<std::string, core::Expression<T>*>("not",((core::Expression<T>*)oper)));
-    //factory(variables["and"],variables["or"],variables["not"],variables["then"],variables["agg"]);
+    factory = new fuzzy::FuzzyFactory<T>((fuzzy::And<T>*)variables["and"],(fuzzy::Or<T>*)variables["or"],(fuzzy::Not<T>*)variables["not"],(fuzzy::Then<T>*)variables["then"],(fuzzy::Agg<T>*)variables["agg"]);
     bool membership = true;
     while (membership) {
         if (*it == "triangle") {
@@ -118,6 +125,18 @@ void fuzzy_adaptor<T>::adapt(std::vector<std::string> input) {
         }
         it++;
     }
+    bool first = true;
+    core::Expression<T>* res;
+    for (auto ph : phrases) {
+        if (first) {
+            res = ph;
+            first = false;
+        } else {
+            res = factory->newAgg(res, ph);
+            //res = new fuzzy::AggMax<T>(*res,*ph);
+        }
+    }
+    variables.insert( std::pair<std::string, core::Expression<T>*>("result",res));
 }
 
 template<class T>
@@ -128,7 +147,7 @@ core::Expression<T> *fuzzy_adaptor<T>::phrase(std::vector<std::string>::const_it
         std::cout << *it << std::endl;
         it++;
     }
-    //val = factory.NewThen(is(it2),is(it));
+    val = factory->NewThen(is(it2),is(it));
     return val;
 }
 
@@ -140,19 +159,64 @@ core::Expression<T> *fuzzy_adaptor<T>::is(std::vector<std::string>::const_iterat
     it++;
     if (*it == "not") {
         it++;
-        //v2 = factory.NewNot(variables[*it]);
+        v2 = factory->NewNot(variables[*it]);
     } else {
         it++;
         v2 = variables[*it];
     }
     it++;
-    //auto* is = factory.NewIs(v1,v2);
+    auto* is = factory->NewIs(v1,v2);
     if (*it == "and") {
-    //   return factory.NewAnd(is,is(it));
+       return factory->NewAnd(is,is(it));
     } else if (*it == "or") {
-    //    return factory.NewOr(is,is(it));
+        return factory->NewOr(is,is(it));
     }
     return is;
 }
 
+template<class T>
+fuzzy_adaptor<T>::fuzzy_adaptor() {
+
+}
+/*
+template<class T>
+core::Expression<T> *fuzzy_adaptor<T>::phrasewofactory(std::vector<std::string>::const_iterator it) {
+    auto it2 = it;
+    core::Expression<T>* val;
+    while (*it != "then") {
+        std::cout << *it << std::endl;
+        it++;
+    }
+    //val = factory->NewThen(is(it2),is(it));
+    val = new fuzzy::ThenMin<T>(iswofactory(it2),iswofactory(it));
+    return val;
+}
+
+template<class T>
+core::Expression<T> *fuzzy_adaptor<T>::iswofactory(std::vector<std::string>::const_iterator it) {
+    core::Expression<T>* v1;
+    core::Expression<T>* v2;
+    v1 = variables[*it];
+    it++;
+    if (*it == "not") {
+        it++;
+        //v2 = factory->NewNot(variables[*it]);
+        v2 = new fuzzy::NotMinus1<T>(variables[*it]);
+    } else {
+        it++;
+        v2 = variables[*it];
+    }
+    it++;
+    //auto* is = factory->NewIs(v1,v2);
+    auto* is = new core::UnaryExpression<T>(v2,v1);
+    if (*it == "and") {
+        //   return factory->NewAnd(is,is(it));
+        return fuzzy::AndMin<T>(is,is(it));
+    } else if (*it == "or") {
+        //    return factory->NewOr(is,is(it));
+        return fuzzy::OrMax<T>(is,is(it));
+    }
+    return is;
+}
+*/
 #endif //CLIONTEST_FUZZY_ADAPTOR_H

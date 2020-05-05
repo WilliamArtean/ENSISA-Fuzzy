@@ -14,7 +14,6 @@
 #include "BinaryExpressionModel.h"
 
 namespace core {
-    /*
     template <class T>
     class ExpressionFactory
     {
@@ -24,9 +23,9 @@ namespace core {
         ExpressionFactory();
         ExpressionFactory(const ExpressionFactory& o);
         ~ExpressionFactory();
-        Expression<T> hold(Expression<T>* expression);
-        Expression<T> newUnary(UnaryExpression<T>* ope , Expression<T>* o );
-        Expression<T> newBinary(BinaryExpression<T>* ope, Expression<T>* l , Expression<T>* r);
+        Expression<T>* hold(Expression<T>* expression);
+        Expression<T>* newUnary(UnaryExpression<T>* ope , Expression<T>* o );
+        Expression<T>* newBinary(BinaryExpression<T>* ope, Expression<T>* l , Expression<T>* r);
     };
 
     template<class T>
@@ -39,24 +38,23 @@ namespace core {
     ExpressionFactory<T>::ExpressionFactory(const ExpressionFactory& o):memory(o.memory) {}
 
     template <class T  >
-    Expression<T> ExpressionFactory<T>::newUnary(UnaryExpression<T> *ope, Expression<T> *o)
+    Expression<T>* ExpressionFactory<T>::newUnary(UnaryExpression<T> *ope, Expression<T> *o)
     {
         return this->hold( new UnaryExpressionModel<T>(ope,o));
     }
 
     template <class T>
-    Expression<T> ExpressionFactory<T>::newBinary(BinaryExpression<T> *ope, Expression<T> *l, Expression<T> *r)
+    Expression<T>* ExpressionFactory<T>::newBinary(BinaryExpression<T> *ope, Expression<T> *l, Expression<T> *r)
     {
         return this->hold(new BinaryExpressionModel<T>(ope,l,r));
     }
 
     template <class T>
-    Expression<T> ExpressionFactory<T>::hold(core::Expression<T> *expression)
+    Expression<T>* ExpressionFactory<T>::hold(core::Expression<T> *expression)
     {
         this->memory.push_back(expression);
         return expression;
     }
-    */
 }
 
 #endif //CLIONTEST_EXPRESSIONFACTORY_H
