@@ -333,7 +333,6 @@ void testFactory() {
     f.newNot(&vm1);
     fuzzy::IsTriangle<double> it(0., 5., 10.);
     f.newIs(&vm1, &it);
-    f.newMamdaniDefuzz(&vm1, &vm2);
 
     f.changeOr(&opOr2);
     f.changeAnd(&opAnd2);
@@ -368,6 +367,8 @@ void testFactory() {
                             f.newIs(&tips,&generous)
                     )
             );
+
+    core::Expression<double> *system = f.newMamdaniDefuzz(&tips, reinterpret_cast<core::BinaryExpressionModel<double> *>(r), 0, 25, 1);
 
 }
 

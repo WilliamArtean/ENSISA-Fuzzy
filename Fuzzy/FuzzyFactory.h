@@ -41,7 +41,7 @@ namespace fuzzy{
         core::Expression<T>* newThen(core::Expression<T>* l , core::Expression<T>* r );
         core::Expression<T>* newAgg(core::Expression<T>* l , core::Expression<T>* r );
         core::Expression<T>* newOr(core::Expression<T>* l, core::Expression<T>* r );
-        core::Expression<T>* newMamdaniDefuzz(core::Expression<T>* l, core::Expression<T>* r );
+        core::Expression<T>* newMamdaniDefuzz( core::ValueModel<T>* value, core::BinaryExpressionModel<T>* expression, T min, T max, T step );
         core::Expression<T>* newNot(core::Expression<T>* o);
         core::Expression<T>* newIs(core::Expression<T>* o, fuzzy::Is<T>* s);
 
@@ -111,8 +111,13 @@ namespace fuzzy{
     }
 
     template <class T>
-    core::Expression<T>* FuzzyFactory<T>::newMamdaniDefuzz(core::Expression<T> *l, core::Expression<T> *r) {
-        return newBinary(_MamdaniDefuzzShadow, l, r);
+    core::Expression<T>* FuzzyFactory<T>::newMamdaniDefuzz(core::ValueModel<T>* value, core::BinaryExpressionModel<T>* expression, T min, T max, T step) {
+        ( (CogDefuzz<T> *) _MamdaniDefuzzShadow->getTarget())->setMin(min);
+        ( (CogDefuzz<T> *) _MamdaniDefuzzShadow->getTarget())->setMax(max);
+        ( (CogDefuzz<T> *) _MamdaniDefuzzShadow->getTarget())->setStep(step);
+        ( (CogDefuzz<T> *) _MamdaniDefuzzShadow->getTarget())->setValue(value);
+        ( (CogDefuzz<T> *) _MamdaniDefuzzShadow->getTarget())->setExpression(expression);
+        return newBinary(_MamdaniDefuzzShadow, value, expression);
     }
 
 
