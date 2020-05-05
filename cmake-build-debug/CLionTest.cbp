@@ -4,207 +4,209 @@
 	<Project>
 		<Option title="CLionTest"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CLionTest">
-				<Option output="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/CLionTest" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 CLionTest"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CLionTest/fast">
-				<Option output="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/CLionTest" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 CLionTest/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug"/>
+				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CLionTest">
+				<Option output="D:/Developpement/C++/CLionTest/cmake-build-debug/CLionTest.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.24.28314/bin/Hostx86/x86/*"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 CLionTest"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CLionTest/fast">
+				<Option output="D:/Developpement/C++/CLionTest/cmake-build-debug/CLionTest.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.24.28314/bin/Hostx86/x86/*"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 CLionTest/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Developpement/C++/CLionTest/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Developpement\C++\CLionTest\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/fuzzy_adaptor.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/fuzzy_adaptor.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/fuzzy_driver.cpp">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/fuzzy_driver.cpp">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/fuzzy_driver.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/fuzzy_driver.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/fuzzy_parser.tab.cc">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/fuzzy_parser.tab.cc">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/fuzzy_parser.tab.hh">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/fuzzy_parser.tab.hh">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/lex.yy.cc">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/lex.yy.cc">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/location.hh">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/location.hh">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/position.hh">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/position.hh">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/stack.hh">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/stack.hh">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/test.cpp">
+		<Unit filename="D:/Developpement/C++/CLionTest/Compiler/test.cpp">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/BinaryExpression.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/BinaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/BinaryExpressionModel.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/BinaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/BinaryShadowExpression.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/BinaryShadowExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/Expression.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/Expression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/ExpressionFactory.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/ExpressionFactory.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/UnaryExpression.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/UnaryExpressionModel.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/UnaryShadowExpression.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryShadowExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Core/ValueModel.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/ValueModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/Agg.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/Agg.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/AggMax.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AggMax.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/AggPlus.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AggPlus.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/And.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/And.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/AndMin.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AndMin.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/AndMult.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/AndMult.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/CogDefuzz.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/CogDefuzz.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/FuzzyFactory.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/FuzzyFactory.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/Is.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/Is.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/IsTriangle.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/IsTriangle.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/MamdaniDefuzz.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/MamdaniDefuzz.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/Not.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/Not.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/NotMinus1.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/NotMinus1.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/Operator.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/Operator.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/Or.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/Or.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/OrMax.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/OrMax.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/OrPlus.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/OrPlus.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/Then.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/Then.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/ThenMin.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/ThenMin.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Fuzzy/ThenMult.h">
+		<Unit filename="D:/Developpement/C++/CLionTest/Fuzzy/ThenMult.h">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/main.cpp">
+		<Unit filename="D:/Developpement/C++/CLionTest/main.cpp">
 			<Option target="CLionTest"/>
 		</Unit>
-		<Unit filename="/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/CMakeLists.txt">
+		<Unit filename="D:/Developpement/C++/CLionTest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

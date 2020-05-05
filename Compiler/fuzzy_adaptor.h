@@ -7,7 +7,7 @@
 
 # include <string>
 # include <map>
-#include <FuzzyFactory.h>
+#include "../Fuzzy/FuzzyFactory.h"
 #include "../Fuzzy/AndMin.h"
 #include "../Core/Expression.h"
 #include "../Fuzzy/AndMult.h"
@@ -123,7 +123,7 @@ void fuzzy_adaptor<T>::adapt(std::vector<std::string> input) {
 template<class T>
 core::Expression<T> *fuzzy_adaptor<T>::phrase(std::vector<std::string>::const_iterator it) {
     auto it2 = it;
-    core::Expression<T>* val;
+    core::Expression<T>* val = 0;
     while (*it != "then") {
         std::cout << *it << std::endl;
         it++;

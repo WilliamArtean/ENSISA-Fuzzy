@@ -8,6 +8,8 @@
 #define YY_FLEX_MAJOR_VERSION 2
 #define YY_FLEX_MINOR_VERSION 5
 
+
+
 #include <stdio.h>
 #include <errno.h>
 
@@ -24,6 +26,7 @@
 #include <stdlib.h>
 #ifndef _WIN32
 #include <unistd.h>
+
 #endif
 
 /* Use prototypes in function declarations. */
@@ -1391,6 +1394,8 @@ YY_BUFFER_STATE b;
 
 #ifndef _WIN32
 #include <unistd.h>
+
+
 #else
 #ifndef YY_ALWAYS_INTERACTIVE
 #ifndef YY_NEVER_INTERACTIVE
@@ -1420,7 +1425,7 @@ FILE *file;
 #if YY_NEVER_INTERACTIVE
 	b->yy_is_interactive = 0;
 #else
-	b->yy_is_interactive = file ? (isatty( fileno(file) ) > 0) : 0;
+	//b->yy_is_interactive = file ? (isatty( fileno(file) ) > 0) : 0;
 #endif
 #endif
 	}
