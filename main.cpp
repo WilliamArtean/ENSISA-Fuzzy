@@ -222,6 +222,31 @@ void testSugenoDefuzz() {
     assert(sd.evaluate(operands) == 0.44);
 }
 
+void testUnaryShadowExpression() {
+    std::cout << std::endl << "test UnaryShadowExpression";
+    fuzzy::IsTriangle<double> it(0., 2., 4.);
+    core::ValueModel<double> vm(1.);
+
+    core::UnaryShadowExpression<double> use;
+    use.setTarget(&it);
+
+    assert(use.getTarget() == &it);
+    assert(use.evaluate(&vm) == 0.5);
+}
+
+void testBinaryShadowExpression() {
+    std::cout << std::endl << "test BinaryShadowExpression";
+    core::ValueModel<double> vm(0.2);
+    core::ValueModel<double> vm2(0.5);
+    fuzzy::AndMin<double> am;
+
+    core::BinaryShadowExpression<double> bse;
+    bse.setTarget(&am);
+
+    assert(bse.getTarget() == &am);
+    assert(bse.evaluate(&vm, &vm2) == vm.evaluate());
+}
+
 void testNaryShadowExpression() {
     std::vector<double> coeffs = {0.5, 0.1, 0.2};
     fuzzy::SugenoConclusion<double> sc1(coeffs);

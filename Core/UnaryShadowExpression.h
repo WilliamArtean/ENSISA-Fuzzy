@@ -14,12 +14,12 @@ namespace core {
     class UnaryShadowExpression : public UnaryExpression<T>
     {
     private:
-        Expression<T>* target;
+        UnaryExpression<T>* target;
     public:
         UnaryShadowExpression();
         UnaryShadowExpression(UnaryExpression<T>* _target);
-        void setTarget(const UnaryExpression<T>& _target);
-        UnaryExpression<T> getTarget();
+        void setTarget(UnaryExpression<T> *_target);
+        UnaryExpression<T>* getTarget();
 
         virtual T evaluate(Expression<T>* o) const;
     };
@@ -33,12 +33,12 @@ namespace core {
 
 
     template <class T>
-    void UnaryShadowExpression<T>::setTarget(const UnaryExpression<T>& _target) {
+    void UnaryShadowExpression<T>::setTarget(UnaryExpression<T> *_target) {
         this->target = _target;
     }
 
     template <class T>
-    UnaryExpression<T> UnaryShadowExpression<T>::getTarget() {
+    UnaryExpression<T>* UnaryShadowExpression<T>::getTarget() {
         return target;
     }
 
