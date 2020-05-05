@@ -61,6 +61,7 @@ namespace fuzzy{
         _NotShadow = new core::UnaryShadowExpression<T>(o->_NotShadow);
         _ThenShadow = new core::BinaryShadowExpression<T>(o->_ThenShadow);
         _AggShadow = new core::BinaryShadowExpression<T>(o->_AggShadow);
+        _MamdaniDefuzzShadow = new core::BinaryShadowExpression<T>(o->_MamdaniDefuzzShadow);
     }
     template<class T>
     FuzzyFactory<T>::FuzzyFactory(And<T>* opAnd, Or<T>* opOr, Not<T>* opNot, Then<T>* opThen, Agg<T>* opAgg, CogDefuzz<T>* defuzz) {
