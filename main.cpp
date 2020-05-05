@@ -309,6 +309,28 @@ int testCompiler() {
     return res;
 }
 
+void testFactory() {
+    fuzzy::AndMin<double> opAnd;
+    fuzzy::OrMax<double> opOr;
+    fuzzy::NotMinus1<double> opNot;
+    fuzzy::ThenMin<double> opThen;
+    fuzzy::AggPlus<double> opAgg;
+    fuzzy::CogDefuzz<double> opDefuzz;
+
+    fuzzy::FuzzyFactory<double> f(&opAnd,&opOr,&opNot,&opThen,&opAgg,&opDefuzz);
+    fuzzy::FuzzyFactory<double> f2(&f);
+
+    core::ValueModel<double> vm1(0.4);
+    core::ValueModel<double> vm2(0.5);
+    f.newAnd(&vm1, &vm2);
+    f.newThen(&vm1, &vm2);
+    f.newOr(&vm1, &vm2);
+    f.newAgg(&vm1, &vm2);
+    f.newNot(&vm1);
+    //f.newIs(&vm1, &vm2);
+
+}
+
 int main() {
     std::cout << std::endl << "Test ValueModel";
     core::ValueModel<int> vmint = core::ValueModel<int>(15);
@@ -420,7 +442,7 @@ int main() {
     testMamdaniCogDefuzz();
     testMamdaniCogEvaluate();
     testShadowExpressions();
-
+    testFactory();
 
     //Omar Testing Part
     //testing IsTriangle

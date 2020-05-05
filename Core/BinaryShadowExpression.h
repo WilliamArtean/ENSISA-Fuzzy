@@ -10,11 +10,12 @@
 
 namespace core {
     template <class T>
-    class BinaryShadowExpression:BinaryExpression<T>{
+    class BinaryShadowExpression : public BinaryExpression<T>{
     private:
         BinaryExpression<T>* target;
     public:
         BinaryShadowExpression();
+        BinaryShadowExpression(BinaryExpression<T> *_target);
         virtual T evaluate(Expression<T>* l, Expression<T>* r) const;
         void setTarget(BinaryExpression<T> *binaryExpression);
         BinaryExpression<T>* getTarget();
@@ -22,6 +23,12 @@ namespace core {
 
     template <class T>
     BinaryShadowExpression<T>::BinaryShadowExpression() {}
+
+    template <class T>
+    BinaryShadowExpression<T>::BinaryShadowExpression(BinaryExpression<T> *_target) :
+    target(_target)
+    {
+    }
 
     template <class T>
     T BinaryShadowExpression<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const
