@@ -45,6 +45,7 @@ namespace core {
     T BinaryExpressionModel<T>::evaluate() const {
         if (leftOperand != NULL && rightOperand != NULL) {
             return evaluate(leftOperand, rightOperand);
+
         }
         return NULL;
     }

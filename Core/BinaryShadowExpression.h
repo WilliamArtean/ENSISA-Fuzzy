@@ -34,7 +34,7 @@ namespace core {
     T BinaryShadowExpression<T>::evaluate(core::Expression<T> *l, core::Expression<T> *r) const
     {
         if(this->target != NULL)
-            return target->evaluate(l,r);
+        return target->evaluate(l,r);
         //throw NullArgumentException("BinaryShadowExpression : Expression");
         return NULL;
     }
