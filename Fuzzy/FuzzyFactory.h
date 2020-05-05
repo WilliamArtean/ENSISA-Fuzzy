@@ -78,6 +78,7 @@ namespace fuzzy{
         delete _NotShadow;
         delete _ThenShadow;
         delete _AndShadow;
+		delete _MamdaniDefuzzShadow;
     }
 
     template <class T>
