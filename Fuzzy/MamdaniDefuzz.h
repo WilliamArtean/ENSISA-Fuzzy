@@ -38,15 +38,15 @@ namespace fuzzy {
 
 		core::BinaryExpression <T> *getExpression() const;
 
-		void setMin(T) const;
+		void setMin(T);
 
-		void setMax(T) const;
+		void setMax(T);
 
-		void setStep(T) const;
+		void setStep(T);
 
-		void setValue(core::ValueModel<T>*) const;
+		void setValue(core::ValueModel<T>*);
 
-		void setExpression(core::BinaryExpression<T>*) const;
+		void setExpression(core::BinaryExpression<T>*);
 
     protected:
         T min;
@@ -130,27 +130,27 @@ namespace fuzzy {
 	}
 	
 	template<class T>
-	void MamdaniDefuzz<T>::setMin(T m) const {
+	void MamdaniDefuzz<T>::setMin(T m) {
 		min = m;
 	}
 
 	template<class T>
-	void MamdaniDefuzz<T>::setMax(T m) const {
+	void MamdaniDefuzz<T>::setMax(T m) {
 		max = m;
 	}
 
 	template<class T>
-	void MamdaniDefuzz<T>::setStep(T step) const {
+	void MamdaniDefuzz<T>::setStep(T s) {
 		step = s;
 	}
 
 	template<class T>
-	void MamdaniDefuzz<T>::setValue(core::ValueModel<T> * v) const {
+	void MamdaniDefuzz<T>::setValue(core::ValueModel<T> * v) {
 		value = v;
 	}
 
 	template<class T>
-	void MamdaniDefuzz<T>::setExpression(core::BinaryExpression<T> * e) const {
+	void MamdaniDefuzz<T>::setExpression(core::BinaryExpression<T> * e) {
 		expression = e;
 	}
 

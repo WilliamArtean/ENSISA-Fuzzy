@@ -127,7 +127,7 @@ void testMamdaniCogEvaluate() {
     fuzzy::OrPlus<double> op;
     core::BinaryExpressionModel<double> bem(&op, &x, &y);
     fuzzy::CogDefuzz<double> cogD(&x, &bem, 0, 0.5, 0.1);
-    assert(round(100*cogD.Evaluate()) == 35);
+    assert(round(100*cogD.evaluate()) == 35);
 }
 
 void testNaryExpressionModel() {
@@ -369,6 +369,7 @@ void testFactory() {
             );
 
     core::Expression<double> *system = f.newMamdaniDefuzz(&tips, reinterpret_cast<core::BinaryExpressionModel<double> *>(r), 0, 25, 1);
+    system->evaluate();
 
 }
 
