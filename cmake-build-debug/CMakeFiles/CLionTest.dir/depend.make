@@ -66,6 +66,7 @@ CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\Expression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\ExpressionFactory.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\NaryExpression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\NaryExpressionModel.h
+CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\NaryShadowExpression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\UnaryExpression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\UnaryExpressionModel.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\UnaryShadowExpression.h

@@ -137,6 +137,9 @@
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/NaryExpressionModel.h">
 			<Option target="CLionTest"/>
 		</Unit>
+		<Unit filename="D:/Developpement/C++/CLionTest/Core/NaryShadowExpression.h">
+			<Option target="CLionTest"/>
+		</Unit>
 		<Unit filename="D:/Developpement/C++/CLionTest/Core/UnaryExpression.h">
 			<Option target="CLionTest"/>
 		</Unit>

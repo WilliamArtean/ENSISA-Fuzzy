@@ -9,6 +9,7 @@
 #include "../Core/BinaryShadowExpression.h"
 #include "../Core/UnaryShadowExpression.h"
 #include "../Core/Expression.h"
+#include "../Core/ExpressionFactory.h"
 #include "Operator.h"
 
 #include "NotMinus1.h"
@@ -18,7 +19,7 @@
 #include "CogDefuzz.h"
 
 namespace fuzzy{
-    /*
+
     template <class T>
     class FuzzyFactory :public core::ExpressionFactory<T>
     {
@@ -40,14 +41,14 @@ namespace fuzzy{
         core::Expression<T> newThen(core::Expression<T>* l , core::Expression<T>* r );
         core::Expression<T> newAgg(core::Expression<T>* l , core::Expression<T>* r );
         core::Expression<T> newOr(core::Expression<T>* l, core::Expression<T>* r );
-        core::Expression<T> newDefuzz(core::Expression<T>* l , core::Expression<T>* r );
+        core::Expression<T> newMamdaniDefuzz(core::Expression<T>* l, core::Expression<T>* r );
         core::Expression<T> newNot(core::Expression<T>* o);
         core::Expression<T> newIs(fuzzy::Is<T>* s,core::Expression<T>* o);
 
 
         void changeAnd(fuzzy::And<T>* opAnd);
         void changeOr(fuzzy::Or<T>* opOr);
-        void chandeThen(fuzzy::Then<T>* opThen);
+        void changeThen(fuzzy::Then<T>* opThen);
         void changeNot(fuzzy::Not<T>* opNot);
 
 
@@ -72,8 +73,8 @@ namespace fuzzy{
     template <class T>
     FuzzyFactory<T>::~FuzzyFactory() {
         delete _AggShadow;
-        delete  _OrShadow;
-        delete  _NotShadow;
+        delete _OrShadow;
+        delete _NotShadow;
         delete _ThenShadow;
         delete _AndShadow;
     }
@@ -108,6 +109,11 @@ namespace fuzzy{
         return newBinary(_AggShadow, l, r);
     }
 
+    template <class T>
+    core::Expression<T> FuzzyFactory<T>::newMamdaniDefuzz(core::Expression<T> *l, core::Expression<T> *r) {
+        return newBinary(_MamdaniDefuzzShadow, l, r);
+    }
+
 
 
     template <class T>
@@ -123,11 +129,11 @@ namespace fuzzy{
         _NotShadow->setTarget(opNot);
     }
     template <class T>
-    void FuzzyFactory<T>::chandeThen(fuzzy::Then<T> *opThen) {
+    void FuzzyFactory<T>::changeThen(fuzzy::Then<T> *opThen) {
         _ThenShadow->setTarget(opThen);
     }
 
-*/
+
 
     }
 #endif //CLIONTEST_FUZZYFACTORY_H

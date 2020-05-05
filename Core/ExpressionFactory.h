@@ -14,7 +14,6 @@
 #include "BinaryExpressionModel.h"
 
 namespace core {
-    /*
     template <class T>
     class ExpressionFactory
     {
@@ -24,6 +23,7 @@ namespace core {
         ExpressionFactory();
         ExpressionFactory(const ExpressionFactory& o);
         ~ExpressionFactory();
+
         Expression<T> hold(Expression<T>* expression);
         Expression<T> newUnary(UnaryExpression<T>* ope , Expression<T>* o );
         Expression<T> newBinary(BinaryExpression<T>* ope, Expression<T>* l , Expression<T>* r);
@@ -56,7 +56,6 @@ namespace core {
         this->memory.push_back(expression);
         return expression;
     }
-    */
 }
 
 #endif //CLIONTEST_EXPRESSIONFACTORY_H
