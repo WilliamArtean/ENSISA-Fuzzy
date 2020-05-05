@@ -6,8 +6,6 @@
 #define CLIONTEST_NARYEXPRESSIONMODEL_H
 
 #include "NaryExpression.h"
-#include "Fuzzy/SugenoThen.h"
-#include "Fuzzy/SugenoDefuzz.h"
 
 namespace core {
 

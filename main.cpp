@@ -24,6 +24,7 @@
 #include "Fuzzy/SugenoDefuzz.h"
 #include "Compiler/fuzzy_driver.h"
 #include "Compiler/fuzzy_adaptor.h"
+#include "Core/NaryShadowExpression.h"
 
 
 void testAndMin();
@@ -219,7 +220,27 @@ void testSugenoDefuzz() {
 
     //std::cout << std::endl << sd.evaluate(operands);
     assert(sd.evaluate(operands) == 0.44);
-};
+}
+
+void testNaryShadowExpression() {
+    std::vector<double> coeffs = {0.5, 0.1, 0.2};
+    fuzzy::SugenoConclusion<double> sc1(coeffs);
+    core::ValueModel<double> vm1(0.4);
+    core::ValueModel<double> vm2(0.5);
+    core::ValueModel<double> vm3(0.6);
+    fuzzy::SugenoThen<double> st;
+    core::BinaryExpressionModel<double> bem1(&st, &vm1, &vm2);
+    core::BinaryExpressionModel<double> bem2(&st, &vm3, &vm1);
+    vector<core::Expression<double> *> operands = {&bem1, &bem2};
+
+    fuzzy::SugenoDefuzz<double> sd;
+
+    std::cout << std::endl << "test NaryShadowExpression double";
+    core::NaryShadowExpression<double> nse;
+    nse.setTarget(&sd);
+    assert(nse.getTarget() == &sd);
+    assert(nse.evaluate(operands) == 0.44);
+}
 
 void testExpressions() {
     testValueModel();
@@ -240,6 +261,12 @@ void testSugeno() {
     testSugenoConclusion();
     testSugenoDefuzz();
     testSugenoThen();
+}
+
+void testShadowExpressions() {
+    testUnaryShadowExpression();
+    testBinaryShadowExpression();
+    testNaryShadowExpression();
 }
 
 int testCompiler() {
@@ -367,6 +394,7 @@ int main() {
     testBuildShape();
     testMamdaniCogDefuzz();
     testMamdaniCogEvaluate();
+    testShadowExpressions();
 
 
     //Omar Testing Part

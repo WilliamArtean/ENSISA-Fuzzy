@@ -34,7 +34,6 @@ CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Core\BinaryExpressionModel.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Core\BinaryShadowExpression.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Core\Expression.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Core\ExpressionFactory.h
-CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Core\NaryExpression.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Core\UnaryExpression.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Core\UnaryExpressionModel.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Core\UnaryShadowExpression.h
@@ -51,8 +50,6 @@ CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\NotMinus1.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\Operator.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\OrMax.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\OrPlus.h
-CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\SugenoConclusion.h
-CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\SugenoThen.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\ThenMin.h
 CMakeFiles\CLionTest.dir\Compiler\test.cpp.obj: ..\Fuzzy\ThenMult.h
 
@@ -69,6 +66,7 @@ CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\Expression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\ExpressionFactory.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\NaryExpression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\NaryExpressionModel.h
+CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\NaryShadowExpression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\UnaryExpression.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\UnaryExpressionModel.h
 CMakeFiles\CLionTest.dir\main.cpp.obj: ..\Core\UnaryShadowExpression.h

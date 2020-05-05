@@ -15,22 +15,9 @@ namespace fuzzy {
     class SugenoDefuzz : public core::NaryExpression<T> {
     public:
         T evaluate(std::vector<core::Expression<T>* > operands) const;
-        //T evaluate(std::vector<core::BinaryExpressionModel<T>* > operands) const;
     };
 
-/*
-    template <class T>
-    T SugenoDefuzz<T>::evaluate(std::vector<core::Expression<T>* > operands) const {
-        T numerator = 0;
-        T denominator = 0;
 
-        for (int i= 0; i < operands.size(); i++) {
-            numerator += operands[i]->evaluate();
-        }
-
-        return numerator;
-    }
-*/
     template <class T>
     T SugenoDefuzz<T>::evaluate(std::vector<core::Expression<T>* > operands) const {
         T numerator = 0;
