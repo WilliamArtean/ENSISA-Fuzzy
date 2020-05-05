@@ -23,11 +23,9 @@ namespace fuzzy {
         typedef std::pair<std::vector<T>,std::vector<T> > Shape;
         virtual T Defuzz(Shape shape) const = 0;
 
-        static Shape BuildShape(const T& min, const T& max, const T& step, core::ValueModel<T>* value, core::BinaryExpression<T>* expression);
+        static Shape BuildShape(T min, T max, T step, core::ValueModel<T>* value, core::BinaryExpression<T>* expression);
         static std::ostream& PrintShape(std::ostream&, const Shape& s);
 
-    protected:
-        const T& min;
     public:
         const T &getMin() const;
 
@@ -36,8 +34,9 @@ namespace fuzzy {
         const T &getStep() const;
 
     protected:
-        const T& max;
-        const T& step;
+        T min;
+        T max;
+        T step;
     };
     template<class T>
     MamdaniDefuzz<T>::MamdaniDefuzz(): min(0), max(0), step(0) {}
@@ -62,8 +61,7 @@ namespace fuzzy {
 
     template<class T>
     typename MamdaniDefuzz<T>::Shape
-    MamdaniDefuzz<T>::BuildShape(const T &min, const T &max, const T &step, core::ValueModel<T>* value,
-                                 core::BinaryExpression<T>* expression) {
+    MamdaniDefuzz<T>::BuildShape(T min, T max, T step, core::ValueModel<T>* value, core::BinaryExpression<T>* expression) {
         std::vector<T> x, y;
         for (T i= min ;i <= max ;i += step) {
             value->setValue(i);

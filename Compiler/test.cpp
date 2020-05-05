@@ -5,7 +5,7 @@
 
 #include "fuzzy_driver.h"
 #include "fuzzy_adaptor.h"
-
+/*
 int
 main (int argc, char *argv[])
 {
@@ -22,3 +22,4 @@ main (int argc, char *argv[])
     res = 1;
     return res;
 }
+*/

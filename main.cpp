@@ -22,6 +22,8 @@
 #include "Fuzzy/SugenoThen.h"
 #include "Fuzzy/SugenoConclusion.h"
 #include "Fuzzy/SugenoDefuzz.h"
+#include "Compiler/fuzzy_driver.h"
+#include "Compiler/fuzzy_adaptor.h"
 
 
 void testAndMin();
@@ -233,13 +235,27 @@ void testOperator() {
     testAndMin();
 }
 
-/*
+
 void testSugeno() {
     testSugenoConclusion();
     testSugenoDefuzz();
     testSugenoThen();
 }
 
+int testCompiler() {
+    int res = 0;
+    fuzzy_adaptor<double> adaptor;
+    fuzzy_driver driver;
+    if (false)  //show parcing
+    driver.trace_parsing = true;
+    if (false)  //show scanning
+    driver.trace_scanning = true;
+    if (!driver.parse ("../Compiler/instructions.txt")) {
+        adaptor.adapt(driver.result);
+    }
+    res = 1;
+    return res;
+}
 
 int main() {
     std::cout << std::endl << "Test ValueModel";
@@ -376,8 +392,10 @@ int main() {
     vmForGbell.setValue(100);
     fuzzy::IsGbellmf<float> isGbellmf(20,4,100);
     std::cout << std::endl<<isGbellmf.evaluate(&vmForGbell);
-    
+
+    //Compiler
+    testCompiler();
 
     return 0;
 }
- */
+
