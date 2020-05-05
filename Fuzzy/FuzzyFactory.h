@@ -43,7 +43,7 @@ namespace fuzzy{
         core::Expression<T>* newOr(core::Expression<T>* l, core::Expression<T>* r );
         core::Expression<T>* newMamdaniDefuzz(core::Expression<T>* l, core::Expression<T>* r );
         core::Expression<T>* newNot(core::Expression<T>* o);
-        core::Expression<T>* newIs(fuzzy::Is<T>* s,core::Expression<T>* o);
+        core::Expression<T>* newIs(core::Expression<T>* o, fuzzy::Is<T>* s);
 
 
         void changeAnd(fuzzy::And<T>* opAnd);
@@ -101,7 +101,7 @@ namespace fuzzy{
     }
 
     template <class T>
-    core::Expression<T>* FuzzyFactory<T>::newIs(fuzzy::Is<T> *s, core::Expression<T> *o) {
+    core::Expression<T>* FuzzyFactory<T>::newIs(core::Expression<T> *o, fuzzy::Is<T> *s) {
         return newUnary(s,o);
     }
 

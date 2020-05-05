@@ -311,9 +311,13 @@ int testCompiler() {
 
 void testFactory() {
     fuzzy::AndMin<double> opAnd;
+    fuzzy::AndMult<double> opAnd2;
     fuzzy::OrMax<double> opOr;
+    fuzzy::OrPlus<double> opOr2;
     fuzzy::NotMinus1<double> opNot;
+    fuzzy::NotMinus1<double> opNot2;
     fuzzy::ThenMin<double> opThen;
+    fuzzy::ThenMult<double> opThen2;
     fuzzy::AggPlus<double> opAgg;
     fuzzy::CogDefuzz<double> opDefuzz;
 
@@ -327,7 +331,43 @@ void testFactory() {
     f.newOr(&vm1, &vm2);
     f.newAgg(&vm1, &vm2);
     f.newNot(&vm1);
-    //f.newIs(&vm1, &vm2);
+    fuzzy::IsTriangle<double> it(0., 5., 10.);
+    f.newIs(&vm1, &it);
+    f.newMamdaniDefuzz(&vm1, &vm2);
+
+    f.changeOr(&opOr2);
+    f.changeAnd(&opAnd2);
+    f.changeThen(&opThen2);
+    f.changeNot(&opNot2);
+
+    fuzzy::IsTriangle<double> poor(-5., 0., 5.);
+    fuzzy::IsTriangle<double> good(0., 5., 10.);
+    fuzzy::IsTriangle<double> excellent(5., 10., 15.);
+    fuzzy::IsTriangle<double> cheap(-0., 5., 10.);
+    fuzzy::IsTriangle<double> average(10., 15., 20.);
+    fuzzy::IsTriangle<double> generous(20., 25., 30.);
+
+    core::ValueModel<double> service(0);
+    core::ValueModel<double> food(0);
+    core::ValueModel<double> tips(0);
+
+    core::Expression<double> *r =
+            f.newAgg(
+                    f.newAgg(
+                            f.newThen(
+                                    f.newIs(&service,&poor),
+                                    f.newIs(&tips,&cheap)
+                            ),
+                            f.newThen(
+                                    f.newIs(&service,&good),
+                                    f.newIs(&tips,&average)
+                            )
+                    ),
+                    f.newThen(
+                            f.newIs(&service,&excellent),
+                            f.newIs(&tips,&generous)
+                    )
+            );
 
 }
 
