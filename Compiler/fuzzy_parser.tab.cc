@@ -251,9 +251,9 @@ namespace yy {
   {
       switch (that.type_get ())
     {
-      case 20: // "identifier"
-      case 30: // Operator
-      case 45: // Not
+      case 22: // "identifier"
+      case 32: // Operator
+      case 47: // Not
         value.move< std::string > (that.value);
         break;
 
@@ -272,9 +272,9 @@ namespace yy {
     state = that.state;
       switch (that.type_get ())
     {
-      case 20: // "identifier"
-      case 30: // Operator
-      case 45: // Not
+      case 22: // "identifier"
+      case 32: // Operator
+      case 47: // Not
         value.copy< std::string > (that.value);
         break;
 
@@ -314,23 +314,23 @@ namespace yy {
         << yysym.location << ": ";
     switch (yytype)
     {
-            case 20: // "identifier"
+            case 22: // "identifier"
 
-#line 52 "fuzzy_parser.yy" // lalr1.cc:636
+#line 54 "fuzzy_parser.yy" // lalr1.cc:636
         { yyoutput << yysym.value.template as< std::string > (); }
 #line 322 "fuzzy_parser.tab.cc" // lalr1.cc:636
         break;
 
-      case 30: // Operator
+      case 32: // Operator
 
-#line 52 "fuzzy_parser.yy" // lalr1.cc:636
+#line 54 "fuzzy_parser.yy" // lalr1.cc:636
         { yyoutput << yysym.value.template as< std::string > (); }
 #line 329 "fuzzy_parser.tab.cc" // lalr1.cc:636
         break;
 
-      case 45: // Not
+      case 47: // Not
 
-#line 52 "fuzzy_parser.yy" // lalr1.cc:636
+#line 54 "fuzzy_parser.yy" // lalr1.cc:636
         { yyoutput << yysym.value.template as< std::string > (); }
 #line 336 "fuzzy_parser.tab.cc" // lalr1.cc:636
         break;
@@ -541,9 +541,9 @@ namespace yy {
          when using variants.  */
         switch (yyr1_[yyn])
     {
-      case 20: // "identifier"
-      case 30: // Operator
-      case 45: // Not
+      case 22: // "identifier"
+      case 32: // Operator
+      case 47: // Not
         yylhs.value.build< std::string > ();
         break;
 
@@ -565,115 +565,115 @@ namespace yy {
           switch (yyn)
             {
   case 2:
-#line 57 "fuzzy_parser.yy" // lalr1.cc:859
+#line 59 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back(yystack_[4].value.as< std::string > ());}
 #line 571 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 3:
-#line 60 "fuzzy_parser.yy" // lalr1.cc:859
+#line 62 "fuzzy_parser.yy" // lalr1.cc:859
     {}
 #line 577 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 4:
-#line 63 "fuzzy_parser.yy" // lalr1.cc:859
+#line 65 "fuzzy_parser.yy" // lalr1.cc:859
     {}
 #line 583 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 5:
-#line 66 "fuzzy_parser.yy" // lalr1.cc:859
+#line 68 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back("default");}
 #line 589 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 6:
-#line 67 "fuzzy_parser.yy" // lalr1.cc:859
+#line 69 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back(yystack_[0].value.as< std::string > ());}
 #line 595 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 7:
-#line 70 "fuzzy_parser.yy" // lalr1.cc:859
+#line 72 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back("default");}
 #line 601 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 8:
-#line 71 "fuzzy_parser.yy" // lalr1.cc:859
+#line 73 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back(yystack_[0].value.as< std::string > ());}
 #line 607 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 9:
-#line 74 "fuzzy_parser.yy" // lalr1.cc:859
+#line 76 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back("default");}
 #line 613 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 10:
-#line 75 "fuzzy_parser.yy" // lalr1.cc:859
+#line 77 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back(yystack_[0].value.as< std::string > ());}
 #line 619 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 11:
-#line 78 "fuzzy_parser.yy" // lalr1.cc:859
+#line 80 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back("default");}
 #line 625 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 12:
-#line 79 "fuzzy_parser.yy" // lalr1.cc:859
+#line 81 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back(yystack_[0].value.as< std::string > ());}
 #line 631 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 13:
-#line 82 "fuzzy_parser.yy" // lalr1.cc:859
+#line 84 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back("default");}
 #line 637 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 14:
-#line 83 "fuzzy_parser.yy" // lalr1.cc:859
+#line 85 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back(yystack_[0].value.as< std::string > ());}
 #line 643 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 15:
-#line 86 "fuzzy_parser.yy" // lalr1.cc:859
+#line 88 "fuzzy_parser.yy" // lalr1.cc:859
     { yylhs.value.as< std::string > () = yystack_[0].value.as< std::string > (); }
 #line 649 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 16:
-#line 89 "fuzzy_parser.yy" // lalr1.cc:859
+#line 91 "fuzzy_parser.yy" // lalr1.cc:859
     {}
 #line 655 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 17:
-#line 92 "fuzzy_parser.yy" // lalr1.cc:859
+#line 94 "fuzzy_parser.yy" // lalr1.cc:859
     {}
 #line 661 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 18:
-#line 93 "fuzzy_parser.yy" // lalr1.cc:859
+#line 95 "fuzzy_parser.yy" // lalr1.cc:859
     {}
 #line 667 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 19:
-#line 96 "fuzzy_parser.yy" // lalr1.cc:859
+#line 98 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back(yystack_[2].value.as< std::string > ());}
 #line 673 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 20:
-#line 99 "fuzzy_parser.yy" // lalr1.cc:859
+#line 101 "fuzzy_parser.yy" // lalr1.cc:859
     {driver.result.push_back("triangle");
                                                                     driver.result.push_back(yystack_[2].value.as< std::string > ());
                                                                     driver.result.push_back(yystack_[1].value.as< std::string > ());
@@ -684,126 +684,145 @@ namespace yy {
 
   case 21:
 #line 106 "fuzzy_parser.yy" // lalr1.cc:859
-    {}
-#line 689 "fuzzy_parser.tab.cc" // lalr1.cc:859
+    {driver.result.push_back("gaussian");
+                                                     driver.result.push_back(yystack_[1].value.as< std::string > ());
+                                                     driver.result.push_back(yystack_[0].value.as< std::string > ());
+                                               }
+#line 692 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 22:
-#line 107 "fuzzy_parser.yy" // lalr1.cc:859
-    {}
-#line 695 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 110 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back("gbellmf");
+                                                                            driver.result.push_back(yystack_[2].value.as< std::string > ());
+                                                                            driver.result.push_back(yystack_[1].value.as< std::string > ());
+                                                                            driver.result.push_back(yystack_[0].value.as< std::string > ());
+                                                                      }
+#line 702 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 23:
-#line 108 "fuzzy_parser.yy" // lalr1.cc:859
+#line 117 "fuzzy_parser.yy" // lalr1.cc:859
     {}
-#line 701 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 708 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 24:
-#line 111 "fuzzy_parser.yy" // lalr1.cc:859
+#line 118 "fuzzy_parser.yy" // lalr1.cc:859
     {}
-#line 707 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 714 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 25:
-#line 114 "fuzzy_parser.yy" // lalr1.cc:859
-    {driver.result.push_back(yystack_[0].value.as< std::string > ());}
-#line 713 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 119 "fuzzy_parser.yy" // lalr1.cc:859
+    {}
+#line 720 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 26:
-#line 117 "fuzzy_parser.yy" // lalr1.cc:859
-    {driver.result.push_back(yystack_[0].value.as< std::string > ());}
-#line 719 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 122 "fuzzy_parser.yy" // lalr1.cc:859
+    {}
+#line 726 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 27:
-#line 118 "fuzzy_parser.yy" // lalr1.cc:859
-    {driver.result.push_back("0");}
-#line 725 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 125 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back(yystack_[0].value.as< std::string > ());}
+#line 732 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 28:
-#line 121 "fuzzy_parser.yy" // lalr1.cc:859
-    {}
-#line 731 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 128 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back(yystack_[0].value.as< std::string > ());}
+#line 738 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 29:
-#line 122 "fuzzy_parser.yy" // lalr1.cc:859
-    {}
-#line 737 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 129 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back("0");}
+#line 744 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 30:
-#line 125 "fuzzy_parser.yy" // lalr1.cc:859
+#line 132 "fuzzy_parser.yy" // lalr1.cc:859
     {}
-#line 743 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 750 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 31:
-#line 128 "fuzzy_parser.yy" // lalr1.cc:859
-    {driver.result.push_back("newphrase");}
-#line 749 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 133 "fuzzy_parser.yy" // lalr1.cc:859
+    {}
+#line 756 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 32:
-#line 131 "fuzzy_parser.yy" // lalr1.cc:859
+#line 136 "fuzzy_parser.yy" // lalr1.cc:859
     {}
-#line 755 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 762 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 33:
-#line 132 "fuzzy_parser.yy" // lalr1.cc:859
-    {}
-#line 761 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 139 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back("newphrase");}
+#line 768 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 34:
-#line 135 "fuzzy_parser.yy" // lalr1.cc:859
-    {driver.result.push_back("then");}
-#line 767 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 142 "fuzzy_parser.yy" // lalr1.cc:859
+    {}
+#line 774 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 35:
-#line 138 "fuzzy_parser.yy" // lalr1.cc:859
-    {driver.result.push_back(yystack_[3].value.as< std::string > ());driver.result.push_back(yystack_[1].value.as< std::string > ());driver.result.push_back(yystack_[0].value.as< std::string > ());}
-#line 773 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 143 "fuzzy_parser.yy" // lalr1.cc:859
+    {}
+#line 780 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 36:
-#line 141 "fuzzy_parser.yy" // lalr1.cc:859
-    {yylhs.value.as< std::string > () = "notnot";}
-#line 779 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 146 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back("then");}
+#line 786 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 37:
-#line 142 "fuzzy_parser.yy" // lalr1.cc:859
-    {yylhs.value.as< std::string > () ="not";}
-#line 785 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 149 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back(yystack_[3].value.as< std::string > ());driver.result.push_back(yystack_[1].value.as< std::string > ());driver.result.push_back(yystack_[0].value.as< std::string > ());}
+#line 792 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 38:
-#line 145 "fuzzy_parser.yy" // lalr1.cc:859
-    {driver.result.push_back("and");}
-#line 791 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 152 "fuzzy_parser.yy" // lalr1.cc:859
+    {yylhs.value.as< std::string > () = "notnot";}
+#line 798 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 39:
-#line 146 "fuzzy_parser.yy" // lalr1.cc:859
-    {driver.result.push_back("or");}
-#line 797 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 153 "fuzzy_parser.yy" // lalr1.cc:859
+    {yylhs.value.as< std::string > () ="not";}
+#line 804 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 40:
-#line 147 "fuzzy_parser.yy" // lalr1.cc:859
+#line 156 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back("and");}
+#line 810 "fuzzy_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 41:
+#line 157 "fuzzy_parser.yy" // lalr1.cc:859
+    {driver.result.push_back("or");}
+#line 816 "fuzzy_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 42:
+#line 158 "fuzzy_parser.yy" // lalr1.cc:859
     {}
-#line 803 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 822 "fuzzy_parser.tab.cc" // lalr1.cc:859
     break;
 
 
-#line 807 "fuzzy_parser.tab.cc" // lalr1.cc:859
+#line 826 "fuzzy_parser.tab.cc" // lalr1.cc:859
             default:
               break;
             }
@@ -1065,90 +1084,93 @@ namespace yy {
   const signed char
   fuzzy_parser::yypact_[] =
   {
-     -17,   -13,     8,    -4,   -38,    -2,     3,    -1,     9,    12,
-     -38,     6,    -9,     4,    14,     2,    10,   -38,    21,    -9,
-      11,     5,    13,    19,    15,    17,     2,    -9,   -38,   -38,
-      21,    -6,   -38,    16,   -38,   -38,   -38,     5,    20,    25,
-      24,   -38,   -38,    26,   -38,   -38,    34,   -38,    22,     0,
-     -38,   -38,     5,    27,    23,    28,   -38,   -38,    30,   -38,
-     -38,   -38,    -6,   -38,     5,    29,    31,    32,   -38,    33,
-     -38,   -38,     5,   -38,    35,   -38,   -38,   -38
+     -15,   -14,     9,    -3,   -38,     2,     5,     6,    10,    16,
+     -38,    11,    -5,     8,    17,     0,    13,   -38,    24,    -5,
+      14,    12,    15,    21,    18,    19,     0,    -5,   -38,   -38,
+      24,    -6,   -38,    20,   -38,   -38,   -38,    12,    23,    22,
+      -8,   -38,   -38,    27,   -38,   -38,    32,   -38,    25,    -1,
+     -38,   -38,    12,    26,    28,    29,    30,    31,   -38,   -38,
+      35,   -38,   -38,   -38,    -6,   -38,    12,    33,    34,    36,
+      37,    38,   -38,    39,   -38,   -38,    12,   -38,    40,   -38,
+      41,   -38,   -38,   -38,   -38
   };
 
   const unsigned char
   fuzzy_parser::yydefact_[] =
   {
        0,     0,     0,     0,     1,     0,     0,     0,     0,     5,
-       2,     0,    21,     0,     9,    17,     0,    25,    28,    21,
-      27,     0,     0,    11,     0,     0,    17,    21,    31,     3,
-      28,     0,    22,     0,    24,    15,     6,     0,     0,    13,
-       0,    16,    18,     0,    29,    34,     0,    30,     0,    40,
-      26,    10,     0,     0,     7,     0,    19,    23,    36,    33,
-      38,    39,     0,    12,     0,     0,     0,     0,    37,     0,
-      32,    14,     0,     4,     0,    35,     8,    20
+       2,     0,    23,     0,     9,    17,     0,    27,    30,    23,
+      29,     0,     0,    11,     0,     0,    17,    23,    33,     3,
+      30,     0,    24,     0,    26,    15,     6,     0,     0,    13,
+       0,    16,    18,     0,    31,    36,     0,    32,     0,    42,
+      28,    10,     0,     0,     7,     0,     0,     0,    19,    25,
+      38,    35,    40,    41,     0,    12,     0,     0,     0,     0,
+       0,     0,    39,     0,    34,    14,     0,     4,     0,    21,
+       0,    37,     8,    20,    22
   };
 
   const signed char
   fuzzy_parser::yypgoto_[] =
   {
      -38,   -38,   -38,   -38,   -38,   -38,   -38,   -38,   -38,   -37,
-     -38,    36,   -38,   -38,   -15,   -38,   -38,   -38,    37,   -38,
-     -38,   -33,   -38,    -5,   -38,   -38
+     -38,    42,   -38,   -38,   -16,   -38,   -38,   -38,     7,   -38,
+     -38,   -26,   -38,    -4,   -38,   -38
   };
 
   const signed char
   fuzzy_parser::yydefgoto_[] =
   {
-      -1,     2,     7,     8,    14,    66,    23,    39,    54,    36,
-      12,    25,    26,    56,    18,    19,    20,    34,    29,    30,
-      31,    47,    48,    49,    69,    62
+      -1,     2,     7,     8,    14,    68,    23,    39,    54,    36,
+      12,    25,    26,    58,    18,    19,    20,    34,    29,    30,
+      31,    47,    48,    49,    73,    64
   };
 
   const unsigned char
   fuzzy_parser::yytable_[] =
   {
-      51,    45,    16,     1,    32,    60,    61,     3,     4,     5,
-       6,    17,    43,    10,    46,    63,     9,    13,    11,    15,
-      22,    21,    24,    27,    28,    35,    38,    71,    33,    70,
-      37,    41,    40,    53,    55,    76,    50,    52,    58,     0,
-      57,    65,    46,    59,    64,    73,    72,     0,    67,    68,
-       0,     0,    74,    75,     0,    77,     0,     0,     0,     0,
-       0,     0,    42,     0,     0,     0,     0,    44
+      51,    45,    55,    32,    62,    63,    16,     1,     3,     4,
+       5,    43,    56,    57,     6,    65,    46,    17,     9,    11,
+      10,    13,    24,    22,    15,    21,    27,    28,    38,    75,
+      53,    33,    37,    41,    35,    40,    60,    44,    74,    82,
+      52,    59,    50,    66,    61,     0,    67,    46,    77,     0,
+      76,    69,    70,    71,    72,     0,     0,     0,    78,    79,
+      80,    81,    83,    84,     0,     0,     0,     0,    42
   };
 
   const signed char
   fuzzy_parser::yycheck_[] =
   {
-      37,     7,    11,    20,    19,     5,     6,    20,     0,    13,
-      12,    20,    27,    14,    20,    52,    13,     5,     9,    13,
-       6,    17,    20,    13,     3,    20,     7,    64,    17,    62,
-      17,    14,    17,     8,    10,    72,    20,    17,     4,    -1,
-      14,    18,    20,    48,    17,    14,    17,    -1,    20,    19,
-      -1,    -1,    20,    20,    -1,    20,    -1,    -1,    -1,    -1,
-      -1,    -1,    26,    -1,    -1,    -1,    -1,    30
+      37,     7,    10,    19,     5,     6,    11,    22,    22,     0,
+      13,    27,    20,    21,    12,    52,    22,    22,    13,     9,
+      14,     5,    22,     6,    13,    17,    13,     3,     7,    66,
+       8,    17,    17,    14,    22,    17,     4,    30,    64,    76,
+      17,    14,    22,    17,    48,    -1,    18,    22,    14,    -1,
+      17,    22,    22,    22,    19,    -1,    -1,    -1,    22,    22,
+      22,    22,    22,    22,    -1,    -1,    -1,    -1,    26
   };
 
   const unsigned char
   fuzzy_parser::yystos_[] =
   {
-       0,    20,    22,    20,     0,    13,    12,    23,    24,    13,
-      14,     9,    31,     5,    25,    13,    11,    20,    35,    36,
-      37,    17,     6,    27,    20,    32,    33,    13,     3,    39,
-      40,    41,    35,    17,    38,    20,    30,    17,     7,    28,
-      17,    14,    32,    35,    39,     7,    20,    42,    43,    44,
-      20,    30,    17,     8,    29,    10,    34,    14,     4,    44,
-       5,     6,    46,    30,    17,    18,    26,    20,    19,    45,
-      42,    30,    17,    14,    20,    20,    30,    20
+       0,    22,    24,    22,     0,    13,    12,    25,    26,    13,
+      14,     9,    33,     5,    27,    13,    11,    22,    37,    38,
+      39,    17,     6,    29,    22,    34,    35,    13,     3,    41,
+      42,    43,    37,    17,    40,    22,    32,    17,     7,    30,
+      17,    14,    34,    37,    41,     7,    22,    44,    45,    46,
+      22,    32,    17,     8,    31,    10,    20,    21,    36,    14,
+       4,    46,     5,     6,    48,    32,    17,    18,    28,    22,
+      22,    22,    19,    47,    44,    32,    17,    14,    22,    22,
+      22,    22,    32,    22,    22
   };
 
   const unsigned char
   fuzzy_parser::yyr1_[] =
   {
-       0,    21,    22,    23,    24,    25,    25,    26,    26,    27,
-      27,    28,    28,    29,    29,    30,    31,    32,    32,    33,
-      34,    35,    35,    35,    36,    37,    38,    38,    39,    39,
-      40,    41,    42,    42,    43,    44,    45,    45,    46,    46,
-      46
+       0,    23,    24,    25,    26,    27,    27,    28,    28,    29,
+      29,    30,    30,    31,    31,    32,    33,    34,    34,    35,
+      36,    36,    36,    37,    37,    37,    38,    39,    40,    40,
+      41,    41,    42,    43,    44,    44,    45,    46,    47,    47,
+      48,    48,    48
   };
 
   const unsigned char
@@ -1156,9 +1178,9 @@ namespace yy {
   {
        0,     2,     5,     4,     8,     0,     3,     0,     3,     0,
        3,     0,     3,     0,     3,     1,     4,     0,     2,     3,
-       4,     0,     2,     4,     2,     1,     2,     0,     0,     2,
-       2,     1,     3,     2,     1,     4,     0,     1,     1,     1,
-       0
+       4,     3,     4,     0,     2,     4,     2,     1,     2,     0,
+       0,     2,     2,     1,     3,     2,     1,     4,     0,     1,
+       1,     1,     0
   };
 
 
@@ -1171,22 +1193,22 @@ namespace yy {
   "\"end of file\"", "error", "$undefined", "\"if\"", "\"is\"", "\"and\"",
   "\"or\"", "\"then\"", "\"defuzz\"", "\"membership\"", "\"triangle\"",
   "\"values\"", "\"operators\"", "\"{\"", "\"}\"", "\"(\"", "\")\"",
-  "\"=\"", "\"agg\"", "\"not\"", "\"identifier\"", "$accept", "File",
-  "System", "Operators", "And", "Agg", "Or", "Then", "Defuzz", "Operator",
-  "Membership", "Curves", "Curve", "Shape", "Values", "Value", "Name",
-  "OptAs", "Phrases", "Phrase", "If", "Inputs", "Thenphrase", "Input",
-  "Not", "Link", YY_NULLPTR
+  "\"=\"", "\"agg\"", "\"not\"", "\"gaussian\"", "\"gbellmf\"",
+  "\"identifier\"", "$accept", "File", "System", "Operators", "And", "Agg",
+  "Or", "Then", "Defuzz", "Operator", "Membership", "Curves", "Curve",
+  "Shape", "Values", "Value", "Name", "OptAs", "Phrases", "Phrase", "If",
+  "Inputs", "Thenphrase", "Input", "Not", "Link", YY_NULLPTR
   };
 
 #if YYDEBUG
   const unsigned char
   fuzzy_parser::yyrline_[] =
   {
-       0,    57,    57,    60,    63,    66,    67,    70,    71,    74,
-      75,    78,    79,    82,    83,    86,    89,    92,    93,    96,
-      99,   106,   107,   108,   111,   114,   117,   118,   121,   122,
-     125,   128,   131,   132,   135,   138,   141,   142,   145,   146,
-     147
+       0,    59,    59,    62,    65,    68,    69,    72,    73,    76,
+      77,    80,    81,    84,    85,    88,    91,    94,    95,    98,
+     101,   106,   110,   117,   118,   119,   122,   125,   128,   129,
+     132,   133,   136,   139,   142,   143,   146,   149,   152,   153,
+     156,   157,   158
   };
 
   // Print the state stack on the debug stream.
@@ -1221,8 +1243,8 @@ namespace yy {
 
 
 } // yy
-#line 1225 "fuzzy_parser.tab.cc" // lalr1.cc:1167
-#line 149 "fuzzy_parser.yy" // lalr1.cc:1168
+#line 1247 "fuzzy_parser.tab.cc" // lalr1.cc:1167
+#line 160 "fuzzy_parser.yy" // lalr1.cc:1168
 
 
 void

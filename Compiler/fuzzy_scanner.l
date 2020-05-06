@@ -40,8 +40,8 @@ blank [ \t]
 
 "is"           return yy::fuzzy_parser::make_IS(loc);
 "if"           return yy::fuzzy_parser::make_IF(loc);
-"agg"           return yy::fuzzy_parser::make_AGG(loc);
-"not"           return yy::fuzzy_parser::make_NOT(loc);
+"agg"          return yy::fuzzy_parser::make_AGG(loc);
+"not"          return yy::fuzzy_parser::make_NOT(loc);
 "and"          return yy::fuzzy_parser::make_AND(loc);
 "or"           return yy::fuzzy_parser::make_OR(loc);
 "then"         return yy::fuzzy_parser::make_THEN(loc);
@@ -50,6 +50,8 @@ blank [ \t]
 "triangle"     return yy::fuzzy_parser::make_TRIANGLE(loc);
 "values"       return yy::fuzzy_parser::make_VALUES(loc);
 "operators"    return yy::fuzzy_parser::make_OPERATORS(loc);
+"gaussian"     return yy::fuzzy_parser::make_GAUSS(loc);
+"gbellmf"      return yy::fuzzy_parser::make_GBELLMF(loc);
 "("            return yy::fuzzy_parser::make_LPAREN(loc);
 ")"            return yy::fuzzy_parser::make_RPAREN(loc);
 "{"            return yy::fuzzy_parser::make_LEMBR(loc);

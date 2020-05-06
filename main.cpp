@@ -296,7 +296,14 @@ int testCompiler() {
     if (!driver.parse ("/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/instructions.txt")) {
         adaptor.adapt(driver.result);
         std::map<std::string, core::Expression<double>*> result = adaptor.variables;
-        std::cout << "langage : " << adaptor.defuzz("tip",0,25,1);
+        std::cout << std::endl << "langage : " << adaptor.defuzz("tip",0,25,1);
+    }
+    fuzzy_adaptor<double> adaptor2;
+    fuzzy_driver driver2;
+    if (!driver2.parse ("/home/coscoy/Documents/c++/projet_flou/ENSISA-Fuzzy/Compiler/instruction2.txt")) {
+        adaptor2.adapt(driver2.result);
+        std::map<std::string, core::Expression<double>*> result = adaptor2.variables;
+        std::cout << std::endl << "langage : " << adaptor2.defuzz("tip",0,25,1);
     }
     res = 1;
     return res;
@@ -338,7 +345,6 @@ void testFactory() {
     vm1.setValue(4);
     fuzzy::IsTriangle<double> it(0., 5., 10.);
     auto * istest = f.newIs(&vm1, &it);
-    std::cout << istest->evaluate();
     assert(round(100*istest->evaluate()) == 80);
 
 
@@ -486,7 +492,7 @@ int main() {
     testBuildShape();
     testMamdaniCogEvaluate();
     testShadowExpressions();
-    testFactory();
+
 
     //Omar Testing Part
     //testing IsTriangle
@@ -503,17 +509,21 @@ int main() {
     core::ValueModel<float> vmForGaussian;
     vmForGaussian.setValue(0);
     fuzzy::IsGaussianmf<float> isGaussianmf(0.5, 0);
-    std::cout << std::endl << isGaussianmf.evaluate(&vmForGaussian);
+    assert(isGaussianmf.evaluate(&vmForGaussian) == 1);
 
     //testing isGbellmf
     std::cout << std::endl << "is GBell";
     core::ValueModel<float> vmForGbell;
     vmForGbell.setValue(100);
-    fuzzy::IsGbellmf<float> isGbellmf(20, 4, 100);
-    std::cout << std::endl << isGbellmf.evaluate(&vmForGbell) << std::endl ;
+    fuzzy::IsGbellmf<float> isGbellmf(4, 20, 100);
+    assert(isGbellmf.evaluate(&vmForGbell)==1) ;
+    vmForGbell.setValue(4);
+    assert(isGbellmf.evaluate(&vmForGbell)==0) ;
 
+    testFactory();
     //Compiler
     testCompiler();
 
     return 0;
+
 }

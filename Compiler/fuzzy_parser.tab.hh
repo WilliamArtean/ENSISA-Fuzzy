@@ -333,7 +333,9 @@ namespace yy {
         TOK_EQUAL = 272,
         TOK_AGG = 273,
         TOK_NOT = 274,
-        TOK_IDENTIFIER = 275
+        TOK_GAUSS = 275,
+        TOK_GBELLMF = 276,
+        TOK_IDENTIFIER = 277
       };
     };
 
@@ -511,6 +513,14 @@ namespace yy {
     static inline
     symbol_type
     make_NOT (const location_type& l);
+
+    static inline
+    symbol_type
+    make_GAUSS (const location_type& l);
+
+    static inline
+    symbol_type
+    make_GBELLMF (const location_type& l);
 
     static inline
     symbol_type
@@ -721,12 +731,12 @@ namespace yy {
     enum
     {
       yyeof_ = 0,
-      yylast_ = 67,     ///< Last index in yytable_.
+      yylast_ = 68,     ///< Last index in yytable_.
       yynnts_ = 26,  ///< Number of nonterminal symbols.
       yyfinal_ = 4, ///< Termination state number.
       yyterror_ = 1,
       yyerrcode_ = 256,
-      yyntokens_ = 21  ///< Number of tokens.
+      yyntokens_ = 23  ///< Number of tokens.
     };
 
 
@@ -770,9 +780,9 @@ namespace yy {
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
-      15,    16,    17,    18,    19,    20
+      15,    16,    17,    18,    19,    20,    21,    22
     };
-    const unsigned int user_token_number_max_ = 275;
+    const unsigned int user_token_number_max_ = 277;
     const token_number_type undef_token_ = 2;
 
     if (static_cast<int>(t) <= yyeof_)
@@ -805,9 +815,9 @@ namespace yy {
   {
       switch (other.type_get ())
     {
-      case 20: // "identifier"
-      case 30: // Operator
-      case 45: // Not
+      case 22: // "identifier"
+      case 32: // Operator
+      case 47: // Not
         value.copy< std::string > (other.value);
         break;
 
@@ -828,9 +838,9 @@ namespace yy {
     (void) v;
       switch (this->type_get ())
     {
-      case 20: // "identifier"
-      case 30: // Operator
-      case 45: // Not
+      case 22: // "identifier"
+      case 32: // Operator
+      case 47: // Not
         value.copy< std::string > (v);
         break;
 
@@ -882,9 +892,9 @@ namespace yy {
     // Type destructor.
     switch (yytype)
     {
-      case 20: // "identifier"
-      case 30: // Operator
-      case 45: // Not
+      case 22: // "identifier"
+      case 32: // Operator
+      case 47: // Not
         value.template destroy< std::string > ();
         break;
 
@@ -911,9 +921,9 @@ namespace yy {
     super_type::move(s);
       switch (this->type_get ())
     {
-      case 20: // "identifier"
-      case 30: // Operator
-      case 45: // Not
+      case 22: // "identifier"
+      case 32: // Operator
+      case 47: // Not
         value.move< std::string > (s.value);
         break;
 
@@ -974,7 +984,7 @@ namespace yy {
     {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
      265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
-     275
+     275,   276,   277
     };
     return static_cast<token_type> (yytoken_number_[type]);
   }
@@ -1088,6 +1098,18 @@ namespace yy {
   }
 
   fuzzy_parser::symbol_type
+  fuzzy_parser::make_GAUSS (const location_type& l)
+  {
+    return symbol_type (token::TOK_GAUSS, l);
+  }
+
+  fuzzy_parser::symbol_type
+  fuzzy_parser::make_GBELLMF (const location_type& l)
+  {
+    return symbol_type (token::TOK_GBELLMF, l);
+  }
+
+  fuzzy_parser::symbol_type
   fuzzy_parser::make_IDENTIFIER (const std::string& v, const location_type& l)
   {
     return symbol_type (token::TOK_IDENTIFIER, v, l);
@@ -1096,7 +1118,7 @@ namespace yy {
 
 
 } // yy
-#line 1100 "fuzzy_parser.tab.hh" // lalr1.cc:377
+#line 1122 "fuzzy_parser.tab.hh" // lalr1.cc:377
 
 
 

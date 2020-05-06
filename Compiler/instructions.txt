@@ -11,9 +11,10 @@ fuzzy System {
 		cheap = triangle 0 5 10
 		good = triangle 0 5 10
 		average = triangle 10 15 20
+
 	}
 	values {
-		food = 8
+		food = 15
 		service = 3
 		tip = 5
 	}

@@ -1,0 +1,27 @@
+fuzzy System {
+	operators {
+		and = AndMin
+		or = OrMax
+		then = ThenMult
+		defuzz = CogDefuzz
+		agg = Aggplus
+	}
+	membership {
+		poor = triangle -5 0 5
+		cheap = triangle 0 5 10
+		good = triangle 0 5 10
+		average = triangle 10 15 20
+		great = triangle 15 20 25
+		bad = gaussian 0 3
+        nice = gbellmf 8 12 14
+	}
+	values {
+		food = 14
+		service = 5
+		tip = 5
+	}
+
+    if food is bad or service is poor then tip is cheap
+    if food is nice or service is good then tip is average
+    if food is nice and service is good then tip is great
+}

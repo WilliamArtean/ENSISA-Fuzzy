@@ -44,6 +44,8 @@ class fuzzy_driver;
   EQUAL         "="
   AGG           "agg"
   NOT           "not"
+  GAUSS         "gaussian"
+  GBELLMF       "gbellmf"
 ;
 %token <std::string> IDENTIFIER "identifier"
 %type  <std::string>
@@ -101,6 +103,15 @@ Shape   : "triangle"  "identifier" "identifier" "identifier" {driver.result.push
                                                                     driver.result.push_back($3);
                                                                     driver.result.push_back($4);
                                                               }
+        | "gaussian" "identifier" "identifier" {driver.result.push_back("gaussian");
+                                                     driver.result.push_back($2);
+                                                     driver.result.push_back($3);
+                                               }
+        | "gbellmf"  "identifier" "identifier" "identifier" {driver.result.push_back("gbellmf");
+                                                                            driver.result.push_back($2);
+                                                                            driver.result.push_back($3);
+                                                                            driver.result.push_back($4);
+                                                                      }
         ;
 
 Values  : %empty                    {}
