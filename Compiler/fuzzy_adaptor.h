@@ -196,10 +196,8 @@ core::Expression<T> *fuzzy_adaptor<T>::is(std::vector<std::string>::const_iterat
     it++;
     auto* isval = factory->newIs(v1,(fuzzy::Is<T>*)v2);
     if (*it == "and") {
-        it++;
        return factory->newAnd(isval,is(it));
     } else if (*it == "or") {
-
         return factory->newOr(isval,is(it));
     }
     return isval;
